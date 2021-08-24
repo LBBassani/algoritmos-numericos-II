@@ -1,0 +1,21 @@
+Analise da matriz saylr3 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-03, max_iter = 1000
+Jacobi - Convergencia obtida apos 506 iteracoes
+Norma do erro relativo = 9.997205e-04
+Tempo de execução = 3076.488277 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 582 iteracoes
+Norma do erro relativo = 9.991668e-04
+Tempo de execução = 3486.268264 s
+
+SOR w = 1.800000e+00, tol 1.000000e-03, max_iter = 1000
+SOR - w=1.800000
+Convergencia obtida apos 351 iteracoes
+Norma do erro relativo = 9.949080e-04
+Tempo de execução = 2272.810410 s
+

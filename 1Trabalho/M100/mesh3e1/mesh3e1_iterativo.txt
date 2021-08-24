@@ -1,0 +1,21 @@
+Analise da matriz mesh3e1 
+
+A matriz é diagonal dominante
+
+Jacobi tol = 1.000000e-03, max_iter = 1000
+Jacobi - Convergencia obtida apos 36 iteracoes
+Norma do erro relativo = 8.392961e-04
+Tempo de execução = 28.395903 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 9 iteracoes
+Norma do erro relativo = 7.245838e-04
+Tempo de execução = 8.238299 s
+
+SOR w = 8.000000e-01, tol 1.000000e-03, max_iter = 1000
+SOR - w=0.800000
+Convergencia obtida apos 11 iteracoes
+Norma do erro relativo = 7.038012e-04
+Tempo de execução = 6.027262 s
+

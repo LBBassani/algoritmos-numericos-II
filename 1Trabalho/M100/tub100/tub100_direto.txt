@@ -1,0 +1,8 @@
+Analise da matriz tub100 
+
+Taxa de preenchimento: 33.333333%
+A distancia relativa entre a solução real e a aproximada é de 8.681944e-14
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 6.992809e-17
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 3.404474e-15
+A norma do resíduo é de 3.410605e-13
+O valor de condicionamento da matriz é 1.334306e+04

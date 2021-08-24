@@ -1,0 +1,8 @@
+Analise da matriz olm100 
+
+Taxa de preenchimento: 39.817629%
+A distancia relativa entre a solução real e a aproximada é de 4.174439e-14
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 2.000000e+00
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 1.599834e-16
+A norma do resíduo é de 8.526513e-14
+O valor de condicionamento da matriz é 1.527517e+04

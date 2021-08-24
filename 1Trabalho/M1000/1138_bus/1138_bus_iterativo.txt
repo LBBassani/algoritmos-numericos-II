@@ -1,0 +1,21 @@
+Analise da matriz 1138_bus 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-03, max_iter = 1000
+Jacobi - Convergencia obtida apos 49 iteracoes
+Norma do erro relativo = 9.866043e-04
+Tempo de execução = 447.555603 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 31 iteracoes
+Norma do erro relativo = 9.843583e-04
+Tempo de execução = 311.900754 s
+
+SOR w = 1.400000e+00, tol 1.000000e-03, max_iter = 1000
+SOR - w=1.400000
+Convergencia obtida apos 19 iteracoes
+Norma do erro relativo = 9.705026e-04
+Tempo de execução = 171.729256 s
+

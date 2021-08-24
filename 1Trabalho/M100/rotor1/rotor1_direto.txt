@@ -1,0 +1,8 @@
+Analise da matriz rotor1 
+
+Taxa de preenchimento: 83.974649%
+A distancia relativa entre a solução real e a aproximada é de 7.360653e-09
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 2.517942e-01
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 1.164621e-14
+A norma do resíduo é de 5.436762e-12
+O valor de condicionamento da matriz é 2.361820e+12

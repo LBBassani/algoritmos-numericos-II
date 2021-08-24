@@ -1,0 +1,8 @@
+Analise da matriz sherman1 
+
+Taxa de preenchimento: 92.630007%
+A distancia relativa entre a solução real e a aproximada é de 1.000169e+00
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 6.880299e+01
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 8.704554e+02
+A norma do resíduo é de 8.704554e+02
+O valor de condicionamento da matriz é 1.559527e+04

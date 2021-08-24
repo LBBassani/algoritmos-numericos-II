@@ -1,0 +1,21 @@
+Analise da matriz nos4 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-02, max_iter = 1000
+Jacobi - Convergencia obtida apos 1000 iteracoes
+Norma do erro relativo = 1.974025e+00
+Tempo de execução = 87.575973 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 401 iteracoes
+Norma do erro relativo = 9.994452e-04
+Tempo de execução = 46.613760 s
+
+SOR w = 1.800000e+00, tol 1.000000e-03, max_iter = 1000
+SOR - w=1.800000
+Convergencia obtida apos 103 iteracoes
+Norma do erro relativo = 9.691207e-04
+Tempo de execução = 8.532023 s
+

@@ -1,0 +1,8 @@
+Analise da matriz saylr3 
+
+Taxa de preenchimento: 92.629717%
+A distancia relativa entre a solução real e a aproximada é de NaN
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 6.880299e+01
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de NaN
+A norma do resíduo é de NaN
+O valor de condicionamento da matriz é 7.153880e+16

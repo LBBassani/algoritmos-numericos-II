@@ -1,0 +1,8 @@
+Analise da matriz nos4 
+
+Taxa de preenchimento: 62.570888%
+A distancia relativa entre a solução real e a aproximada é de 1.176836e-14
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 1.651741e+00
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 8.376385e-16
+A norma do resíduo é de 1.942890e-16
+O valor de condicionamento da matriz é 1.578461e+03

@@ -1,0 +1,21 @@
+Analise da matriz G54 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-03, max_iter = 1000
+Jacobi - Convergencia obtida apos 2 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 6.961862 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 2 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 6.460923 s
+
+SOR w = 1.800000e+00, tol 1.000000e-03, max_iter = 1000
+SOR - w=1.800000
+Convergencia obtida apos 2 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 6.416543 s
+

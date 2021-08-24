@@ -1,0 +1,15 @@
+Analise da matriz olm1000 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-03, max_iter = 1000
+Jacobi - Convergencia obtida apos 491 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 7600.548110 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 2 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 15.613690 s
+

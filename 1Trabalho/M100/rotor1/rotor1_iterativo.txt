@@ -1,0 +1,21 @@
+Analise da matriz rotor1 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-02, max_iter = 1000
+Jacobi - Convergencia obtida apos 2 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 0.063943 s
+
+Seidel tol = 1.000000e-02, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 2 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 0.066629 s
+
+SOR w = 2.000000e+00, tol 1.000000e-02, max_iter = 1000
+SOR - w=2.000000
+Convergencia obtida apos 2 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 0.070166 s
+

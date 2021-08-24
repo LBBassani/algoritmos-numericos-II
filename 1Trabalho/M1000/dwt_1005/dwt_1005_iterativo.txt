@@ -1,0 +1,10 @@
+Analise da matriz dwt_1005 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-03, max_iter = 1000
+Jacobi - Convergencia obtida apos 261 iteracoes
+Norma do erro relativo = NaN
+Tempo de execução = 2780.318233 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000

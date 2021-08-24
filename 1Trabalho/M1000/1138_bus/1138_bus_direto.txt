@@ -1,0 +1,8 @@
+Analise da matriz 1138_bus 
+
+Taxa de preenchimento: 90.295631%
+A distancia relativa entre a solução real e a aproximada é de 5.167200e-12
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 1.083535e+00
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 2.383477e-15
+A norma do resíduo é de 3.637979e-12
+O valor de condicionamento da matriz é 8.572646e+06

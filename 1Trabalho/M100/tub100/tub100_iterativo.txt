@@ -1,0 +1,21 @@
+Analise da matriz tub100 
+
+A matriz não é diagonal dominante
+
+Jacobi tol = 1.000000e-03, max_iter = 1000
+Jacobi - Convergencia obtida apos 1000 iteracoes
+Norma do erro relativo = 1.795864e-03
+Tempo de execução = 96.807475 s
+
+Seidel tol = 1.000000e-03, max_iter = 1000
+SOR - w=1.000000
+Convergencia obtida apos 314 iteracoes
+Norma do erro relativo = 9.859601e-04
+Tempo de execução = 34.784915 s
+
+SOR w = 1.400000e+00, tol 1.000000e-03, max_iter = 1000
+SOR - w=1.400000
+Convergencia obtida apos 141 iteracoes
+Norma do erro relativo = 9.997645e-04
+Tempo de execução = 9.895191 s
+

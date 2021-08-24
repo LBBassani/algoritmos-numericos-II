@@ -1,0 +1,8 @@
+Analise da matriz olm1000 
+
+Taxa de preenchimento: 34.254689%
+A distancia relativa entre a solução real e a aproximada é de 9.605650e-12
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 2.000000e+00
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 3.504457e-16
+A norma do resíduo é de 1.091394e-11
+O valor de condicionamento da matriz é 1.487222e+06

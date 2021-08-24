@@ -1,0 +1,8 @@
+Analise da matriz mesh3e1 
+
+Taxa de preenchimento: 93.716919%
+A distancia relativa entre a solução real e a aproximada é de 1.110223e-15
+A distancia relativa entre a matriz original e a resultante da decomposição LU é de 3.608270e-02
+A distancia relativa entre o vetor solução original e o resultante da decomposição LU é de 4.440892e-16
+A norma do resíduo é de 3.552714e-15
+O valor de condicionamento da matriz é 8.927724e+00
