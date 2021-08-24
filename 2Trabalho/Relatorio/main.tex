@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{typearea}
+\usepackage{multirow}
+\usepackage{color, colortbl}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage[pdftex]{hyperref}
+\definecolor{Gray}{RGB}{231, 230, 230}
+
+\title{Exercício 2 - Métodos dos Gradientes Conjugados}
+\author{Lorena B. Bassani}
+\date{2021}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Este documento relata os resultados do segundo exercício da disciplina de Algoritmos Numéricos II, no semestre 2021/01 EARTE. Observar o comportamento do Método dos Gradientes Conjugados para um conjunto de matrizes esparsas da \textit{SuiteSparse Matrix Collection}\footnote{\href{https://sparse.tamu.edu}{https://sparse.tamu.edu}}.
+\end{abstract}
+
+\section{Introdução}
+Para este exercício, foram utilizadas sete matrizes quadradas esparsas, a \textit{mesh3em5} de $289$ linhas e colunas, \textit{plat362} com $362$ linhas, a \textit{662\_bus} com $662$, \textit{s1rmq4m1} com $5.489$, a \textit{pdb1HYS} com $36.417$ e a \textit{Dubcova3} de dimensão $146.689$, obtidas da coleção de matrizes esparsas \textit{SuiteSparse Matrix Collection}. Nessas sete matrizes, foram realizadas análises quanto ao comportamento do métodos dos gradientes conjugados, utilizando a ferramenta Octave. Na seção~\ref{sec:resultados} são relatadas algumas observações sobre a utilização deste método para resolução de sistemas lineares, e na última parte do trabalho, nas seções~\ref{sec:figures} e~\ref{sec:tabelas}, se encontram as figuras e as tabelas com os resultados obtidos, respectivamente.
+
+\section{Exercício Proposto -- Método dos Gradientes Conjugados}
+\label{sec:resultados}
+O objetivo deste exercício é observar o comportamento de matrizes esparsas na solução de sistemas lineares via método dos gradientes conjugados, que é um método iterativo não estacionário. Para isto, as matrizes escolhidas foram utilizadas como matriz de coeficientes para solução de sistemas lineares através de método nativo do Octave, e foram observados uma série de fatores quanto ao comportamento das matrizes a respeito da convergência da resposta e seu número de condicionamento.
+
+O método dos gradientes conjugados é um dos métodos que levariam a uma resposta exata em $n$ passos, a menos de erros de arredondamento, porém, levando em consideração que a maior parte do decrescimento do erro ocorre nos passos primários, ele é tratado como método iterativo, parando após atingir critérios de tolerância do erro. Isso faz com que o método, para matrizes bem condicionadas, convirja rapidamente, em pouquíssimas iterações quando comparado a dimensão da própria matriz. Essa é sua grande vantagem sobre os métodos dos gradientes puro, pois, caso comece a chegar a um alto número de iterações, pelo fato de realizar mais operações custosas que este, ele se tornaria menos interessante.
+
+Sistemas mal condicionados amplificam erros de arredondamento, geralmente pela grande diferença entre a magnitude dos autovalores desta, apresentando convergência lenta ou nenhuma. Este caso pode ser observado nas matrizes que não convergiram ao final da aplicação do método (apresentam \textit{flag} 1), como a \textit{pdb1HYS} de acordo com as tabelas~\ref{tab:resultados-5k-6} e \ref{tab:resultados-5k-11}. Em especial, nesta última, a matriz \textit{s1rmq4m1} não convergiu, mesmo levando um número muito próximo de $n$ iterações. De fato, na tabela \ref{tab:resultados-10k-11} vemos que, para tolerância $10^{-11}$ tanto a \textit{s1rmq4m1} quanto a \textit{662\_bus} e \textit{plat362} levam mais que $n$ iterações para atingirem o critério de tolerância, e seus gráficos mostram claramente, enquanto a \textit{bcsstk36} nem mesmo converge e a \textit{pdb1HYS} para por estagnação do erro (\textit{flag} 3). Quando visualizando os gráficos dos resíduos em cada iteração, é possível ver o erro aumentar e diminuir quase que aleatoriamente, comportamento que indica que o método começa a caminhar para distanciamento da resposta real ao invés de ficar mais próximo. Observando os números de condicionamento que foram possíveis calcular\footnote{As matrizes \textit{pdb1HYS} e \textit{Dubcova3} não permitiram o calculo do número de condicionamento por serem muito grandes, causando fechamento forçado do programa Octave depois de certo tempo do início da operação. A operação de cálculo de condicionamento é tão ou até mais custosa do que a própria solução do sistema linear, podendo até não ser possível em alguns casos, como observado.}, todas são matrizes mal condicionadas, com números de condicionamento maiores que $10^5$, muito maior que 1.
+
+Apesar disso, apenas as matrizes \textit{plat362} e \textit{bcsstk36} retornaram com norma do máximo da solução muito acima do valor esperado, que seria 1. Isso significa que, de certa forma, apenas essas duas matrizes retornaram com ao menos alguma posição fora do valor da solução exata por um erro muito grande, mesmo que tenham convergido em certas ocasiões. Todas as outras conseguiram, mesmo que contando com a sorte, encontrar uma resposta satisfatória no final.
+
+As matrizes \textit{mesh3em5} e \textit{Dubcova3} mostraram um comportamento muito satisfatório em todas as situações em que foram submetidas ao método, convergindo com um número muito inferior de interações quando comparado as suas dimensões. A matriz \textit{mesh3em5} não apenas possui um número de condicionamento baixo, 4,966, como também é diagonal dominante, sendo uma matriz extremamente vantajosa para aplicação do método. É possível ver em seus gráficos que ambas matrizes apresentaram comportamento de queda linear na dimensão do erro, levando a convergência extremamente rápida do método, com poucas ou nenhuma subida do valor do resíduo durante todo o processo. Com isso, é possível declarar que sejam matrizes bem condicionadas, e que elas demonstram todas as vantagens da aplicação deste método quanto a rapidez da convergência e quantidade mínima de iterações que utiliza para chegar a um resultado satisfatório.
+
+\storeareas\normalsetting
+\KOMAoption{paper}{landscape}
+\areaset{2\textwidth}{.95\textheight}
+\recalctypearea
+
+\section{Figuras dos resultados observados}
+\label{sec:figures}
+
+\input{figures/mesh-figures}
+\input{figures/plat-figures}
+\input{figures/bus-figures}
+\input{figures/s1rmq4m1-figures}
+\input{figures/bcsstk36-figures}
+\input{figures/pdb1HYS-figures}
+\input{figures/Dubcova3-figures}
+
+\section{Tabelas dos resultados observados}
+\label{sec:tabelas}
+
+\input{tabelas/tabela_5k_e-6}
+\input{tabelas/tabela_5k_e-11}
+\input{tabelas/tabela_10k_e-6}
+\input{tabelas/tabela_10k_e-11}
+
+\clearpage
+\normalsetting
+
+\end{document}
