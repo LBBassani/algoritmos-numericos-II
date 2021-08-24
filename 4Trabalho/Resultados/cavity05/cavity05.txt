@@ -1,0 +1,56 @@
+Analise da matriz cavity05 para uso de precondicionadores
+
+Número de linhas da matriz: 1182
+Número de elementos não nulos: 32632
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: 5.770648e+05
+
+
+
+Para k= 447, 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 25.7365 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 394
+Valor final do resíduo relativo: 9.841954e-11
+Norma do máximo da solução: 1.000001e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries cavity05 & 1182 & 447 & 0 & 394 & 9.841954e-11 & 1.000001e+00 & 25.7365 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ILU(0) com reordenamento
+
+
+ilu: A has a zero on the diagonal
+
+
+Precondicionamento ILU(0) sem reordenamento
+
+
+ilu: A has a zero on the diagonal
+
+
+Precondicionamento ILU com reordenamento
+
+
+ilu: encountered a pivot equal to 0
+
+
+Precondicionamento ILU sem reordenamento
+Número de elementos não nulos: 133644
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: 7.245709e+04
+
+
+
+Para k= 447, 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 2.76892 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 27
+Valor final do resíduo relativo: 6.987364e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries cavity05 & 1182 & 32632 &  & 5.770648e+05 & ILU & sem & 133644 & s & 7.245709e+04 & 0.024977 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries cavity05 & 1182 & ILU & sem & 133644 & s & 72457.1 & 447 & 0 & 27 & 6.987364e-11 & 1.000000e+00 & 2.76892 s \\ & & & & & & & & & & & \\ [-1em] \hline \\

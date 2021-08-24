@@ -1,0 +1,84 @@
+Analise da matriz Dubcova3 para uso de precondicionadores
+
+Número de linhas da matriz: 146689
+Número de elementos não nulos: 3636643
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+Precondicionamento ICC(0) com reordenamento
+Número de elementos não nulos: 4769297
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para 100000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 299.55 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 97
+Valor final do resíduo relativo: 9.742899e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC(0) & com & 4769297 & s & -1.000000e+00 & 0.913333 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC(0) & com & 4769297 & s & -1 & 0 & 9.700000e+01 & 9.742899e-11 & 1.000000e+00 & 299.55 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ICC(0) sem reordenamento
+Número de elementos não nulos: 16025173
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para 100000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 1575.17 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 143
+Valor final do resíduo relativo: 9.606530e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC(0) & sem & 16025173 & s & -1.000000e+00 & 1.03894 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC(0) & sem & 16025173 & s & -1 & 0 & 1.430000e+02 & 9.606530e-11 & 1.000000e+00 & 1575.17 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ICC com reordenamento
+Número de elementos não nulos: 8061119
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para 100000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 138.95 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 26
+Valor final do resíduo relativo: 2.954087e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC & com & 8061119 & s & -1.000000e+00 & 1.71888 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC & com & 8061119 & s & -1 & 0 & 2.600000e+01 & 2.954087e-11 & 1.000000e+00 & 138.95 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ICC sem reordenamento
+Número de elementos não nulos: 52898003
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para 100000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 1842 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 32
+Valor final do resíduo relativo: 6.821619e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC & sem & 52898003 & s & -1.000000e+00 & 7.16305 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC & sem & 52898003 & s & -1 & 0 & 3.200000e+01 & 6.821619e-11 & 1.000000e+00 & 1842 s \\ & & & & & & & & & & & \\ [-1em] \hline \\

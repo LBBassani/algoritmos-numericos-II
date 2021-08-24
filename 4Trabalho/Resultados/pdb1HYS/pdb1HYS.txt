@@ -1,0 +1,58 @@
+Analise da matriz pdb1HYS para uso de precondicionadores
+
+Número de linhas da matriz: 36417
+Número de elementos não nulos: 4344765
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+Precondicionamento ICC(0) com reordenamento
+Número de elementos não nulos: 9347919
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para 100000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 3281.42 segundos
+Flag de convergência: 3 [erro estagnado em 8.8649e-07 depois de 1026 iterações]
+Número de iterações: 1026
+Valor final do resíduo relativo: 8.864919e-07
+Norma do máximo da solução: 1.000001e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries pdb1HYS & 36417 & 4344765 &  & -1.000000e+00 & ICC(0) & com & 9347919 & s & -1.000000e+00 & 2.12236 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries pdb1HYS & 36417 & ICC(0) & com & 9347919 & s & -1 & 3 & 1.026000e+03 & 8.864919e-07 & 1.000001e+00 & 3281.42 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ICC(0) sem reordenamento
+Número de elementos não nulos: 10409889
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para 100000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 4548.05 segundos
+Flag de convergência: 3 [erro estagnado em 1.0249e-06 depois de 1266 iterações]
+Número de iterações: 1266
+Valor final do resíduo relativo: 1.024893e-06
+Norma do máximo da solução: 1.000001e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries pdb1HYS & 36417 & 4344765 &  & -1.000000e+00 & ICC(0) & sem & 10409889 & s & -1.000000e+00 & 1.30761 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries pdb1HYS & 36417 & ICC(0) & sem & 10409889 & s & -1 & 3 & 1.266000e+03 & 1.024893e-06 & 1.000001e+00 & 4548.05 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ICC com reordenamento
+
+
+ichol: negative pivot encountered
+
+
+Precondicionamento ICC sem reordenamento
+
+
+ichol: negative pivot encountered
+

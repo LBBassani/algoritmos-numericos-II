@@ -1,0 +1,95 @@
+Analise da matriz epb3 para uso de precondicionadores
+
+Número de linhas da matriz: 84617
+Número de elementos não nulos: 463625
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para k= 800, 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 3933.55 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 7411
+Valor final do resíduo relativo: 9.991353e-11
+Norma do máximo da solução: 1.000001e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries epb3 & 84617 & 800 & 0 & 7411 & 9.991353e-11 & 1.000001e+00 & 3933.55 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ILU(0) com reordenamento
+Número de elementos não nulos: 565126
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para k= 800, 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 174.184 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 185
+Valor final do resíduo relativo: 9.210646e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU(0) & com & 565126 & s & -1.000000e+00 & 0.101275 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU(0) & com & 565126 & s & -1 & 800 & 0 & 185 & 9.210646e-11 & 1.000000e+00 & 174.184 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ILU(0) sem reordenamento
+Número de elementos não nulos: 571799
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para k= 800, 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 101.365 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 150
+Valor final do resíduo relativo: 8.829092e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU(0) & sem & 571799 & s & -1.000000e+00 & 0.052027 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU(0) & sem & 571799 & s & -1 & 800 & 0 & 150 & 8.829092e-11 & 1.000000e+00 & 101.365 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ILU com reordenamento
+Número de elementos não nulos: 1500473
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para k= 800, 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 209.548 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 44
+Valor final do resíduo relativo: 7.579705e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU & com & 1500473 & s & -1.000000e+00 & 10.6831 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU & com & 1500473 & s & -1 & 800 & 0 & 44 & 7.579705e-11 & 1.000000e+00 & 209.548 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+
+Precondicionamento ILU sem reordenamento
+Número de elementos não nulos: 1187509
+A matriz é diagonal dominante
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+
+Para k= 800, 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 157.286 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 44
+Valor final do resíduo relativo: 8.526528e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU & sem & 1187509 & s & -1.000000e+00 & 10.1404 s \\ & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU & sem & 1187509 & s & -1 & 800 & 0 & 44 & 8.526528e-11 & 1.000000e+00 & 157.286 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
