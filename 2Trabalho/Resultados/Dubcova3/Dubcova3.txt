@@ -1,0 +1,50 @@
+Analise da matriz Dubcova3 na resolução pelo método dos Gradientes Conjugados
+
+Número de linhas da matriz: 146689
+Número de elementos não nulos: 3636643
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+Para 10000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 2.70178 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 133
+Valor final do resíduo relativo: 9.039834e-06
+Norma do máximo da solução: 1.000683e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 & 0 & 133 & 9.039834e-06 & 1.000683e+00 & -1.000000e+00 & 2.70178 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 4.30956 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 214
+Valor final do resíduo relativo: 9.438705e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 & 0 & 214 & 9.438705e-11 & 1.000000e+00 & -1.000000e+00 & 4.30956 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 2.75497 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 133
+Valor final do resíduo relativo: 9.039834e-06
+Norma do máximo da solução: 1.000683e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 & 0 & 133 & 9.039834e-06 & 1.000683e+00 & -1.000000e+00 & 2.75497 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 4.33096 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 214
+Valor final do resíduo relativo: 9.438705e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries Dubcova3 & 146689 & 3636643 & 0 & 214 & 9.438705e-11 & 1.000000e+00 & -1.000000e+00 & 4.33096 s \\ & & & & & & & & \\ [-1em] \hline \\

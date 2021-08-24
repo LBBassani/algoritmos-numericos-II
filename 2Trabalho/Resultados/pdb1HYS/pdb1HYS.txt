@@ -1,0 +1,50 @@
+Analise da matriz pdb1HYS na resolução pelo método dos Gradientes Conjugados
+
+Número de linhas da matriz: 36417
+Número de elementos não nulos: 4344765
+
+Número de condicionamento da matriz: -1.000000e+00
+
+
+Para 10000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 99.689 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 6030
+Valor final do resíduo relativo: 9.626156e-06
+Norma do máximo da solução: 1.000001e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries pdb1HYS & 36417 & 4344765 & 0 & 6030 & 9.626156e-06 & 1.000001e+00 & -1.000000e+00 & 99.689 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 106.573 segundos
+Flag de convergência: 3 [erro estagnado em 3.6183e-06 depois de 6204 iterações]
+Número de iterações: 6204
+Valor final do resíduo relativo: 3.618273e-06
+Norma do máximo da solução: 1.000001e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries pdb1HYS & 36417 & 4344765 & 3 & 6204 & 3.618273e-06 & 1.000001e+00 & -1.000000e+00 & 106.573 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 77.0235 segundos
+Flag de convergência: 1 [número maximo de iterações atingido]
+Número de iterações: 4628
+Valor final do resíduo relativo: 3.854805e-05
+Norma do máximo da solução: 1.000010e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries pdb1HYS & 36417 & 4344765 & 1 & 4628 & 3.854805e-05 & 1.000010e+00 & -1.000000e+00 & 77.0235 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 73.3889 segundos
+Flag de convergência: 1 [número maximo de iterações atingido]
+Número de iterações: 4628
+Valor final do resíduo relativo: 3.854805e-05
+Norma do máximo da solução: 1.000010e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries pdb1HYS & 36417 & 4344765 & 1 & 4628 & 3.854805e-05 & 1.000010e+00 & -1.000000e+00 & 73.3889 s \\ & & & & & & & & \\ [-1em] \hline \\

@@ -1,0 +1,50 @@
+Analise da matriz plat362 na resolução pelo método dos Gradientes Conjugados
+
+Número de linhas da matriz: 362
+Número de elementos não nulos: 5786
+
+Número de condicionamento da matriz: 2.178231e+11
+
+
+Para 10000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 0.025856 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 179
+Valor final do resíduo relativo: 9.271656e-06
+Norma do máximo da solução: 1.326850e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries plat362 & 362 & 5786 & 0 & 179 & 9.271656e-06 & 1.326850e+00 & 2.178231e+11 & 0.025856 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 0.554661 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 4089
+Valor final do resíduo relativo: 9.928228e-11
+Norma do máximo da solução: 1.027751e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries plat362 & 362 & 5786 & 0 & 4089 & 9.928228e-11 & 1.027751e+00 & 2.178231e+11 & 0.554661 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 0.0303929 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 179
+Valor final do resíduo relativo: 9.271656e-06
+Norma do máximo da solução: 1.326850e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries plat362 & 362 & 5786 & 0 & 179 & 9.271656e-06 & 1.326850e+00 & 2.178231e+11 & 0.0303929 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 0.560509 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 4089
+Valor final do resíduo relativo: 9.928228e-11
+Norma do máximo da solução: 1.027751e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries plat362 & 362 & 5786 & 0 & 4089 & 9.928228e-11 & 1.027751e+00 & 2.178231e+11 & 0.560509 s \\ & & & & & & & & \\ [-1em] \hline \\

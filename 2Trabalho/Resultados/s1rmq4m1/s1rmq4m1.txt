@@ -1,0 +1,50 @@
+Analise da matriz s1rmq4m1 na resolução pelo método dos Gradientes Conjugados
+
+Número de linhas da matriz: 5489
+Número de elementos não nulos: 262411
+
+Número de condicionamento da matriz: 1.810479e+06
+
+
+Para 10000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 2.5727 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 2441
+Valor final do resíduo relativo: 9.021992e-06
+Norma do máximo da solução: 1.039487e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries s1rmq4m1 & 5489 & 262411 & 0 & 2441 & 9.021992e-06 & 1.039487e+00 & 1.810479e+06 & 2.5727 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 7.74475 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 6416
+Valor final do resíduo relativo: 9.360454e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries s1rmq4m1 & 5489 & 262411 & 0 & 6416 & 9.360454e-11 & 1.000000e+00 & 1.810479e+06 & 7.74475 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 2.60565 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 2441
+Valor final do resíduo relativo: 9.021992e-06
+Norma do máximo da solução: 1.039487e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries s1rmq4m1 & 5489 & 262411 & 0 & 2441 & 9.021992e-06 & 1.039487e+00 & 1.810479e+06 & 2.60565 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 5.06747 segundos
+Flag de convergência: 1 [número maximo de iterações atingido]
+Número de iterações: 4928
+Valor final do resíduo relativo: 3.787623e-09
+Norma do máximo da solução: 1.000033e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries s1rmq4m1 & 5489 & 262411 & 1 & 4928 & 3.787623e-09 & 1.000033e+00 & 1.810479e+06 & 5.06747 s \\ & & & & & & & & \\ [-1em] \hline \\

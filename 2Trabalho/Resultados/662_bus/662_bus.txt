@@ -1,0 +1,50 @@
+Analise da matriz 662_bus na resolução pelo método dos Gradientes Conjugados
+
+Número de linhas da matriz: 662
+Número de elementos não nulos: 2474
+
+Número de condicionamento da matriz: 7.941311e+05
+
+
+Para 10000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 0.066118 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 384
+Valor final do resíduo relativo: 8.556672e-06
+Norma do máximo da solução: 1.000561e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries 662_bus & 662 & 2474 & 0 & 384 & 8.556672e-06 & 1.000561e+00 & 7.941311e+05 & 0.066118 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 0.100955 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 677
+Valor final do resíduo relativo: 8.627720e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries 662_bus & 662 & 2474 & 0 & 677 & 8.627720e-11 & 1.000000e+00 & 7.941311e+05 & 0.100955 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 0.0593071 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 384
+Valor final do resíduo relativo: 8.556672e-06
+Norma do máximo da solução: 1.000561e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries 662_bus & 662 & 2474 & 0 & 384 & 8.556672e-06 & 1.000561e+00 & 7.941311e+05 & 0.0593071 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 0.0971811 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 677
+Valor final do resíduo relativo: 8.627720e-11
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries 662_bus & 662 & 2474 & 0 & 677 & 8.627720e-11 & 1.000000e+00 & 7.941311e+05 & 0.0971811 s \\ & & & & & & & & \\ [-1em] \hline \\

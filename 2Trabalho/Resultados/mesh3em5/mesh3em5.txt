@@ -1,0 +1,50 @@
+Analise da matriz mesh3em5 na resolução pelo método dos Gradientes Conjugados
+
+Número de linhas da matriz: 289
+Número de elementos não nulos: 1377
+
+Número de condicionamento da matriz: 4.965950e+00
+
+
+Para 10000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 0.00355601 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 10
+Valor final do resíduo relativo: 3.750324e-06
+Norma do máximo da solução: 1.000046e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries mesh3em5 & 289 & 1377 & 0 & 10 & 3.750324e-06 & 1.000046e+00 & 4.965950e+00 & 0.00355601 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 10000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 0.00497293 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 19
+Valor final do resíduo relativo: 6.495063e-12
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries mesh3em5 & 289 & 1377 & 0 & 19 & 6.495063e-12 & 1.000000e+00 & 4.965950e+00 & 0.00497293 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-05 de tolerância
+Tempo de espera: 0.0033319 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 10
+Valor final do resíduo relativo: 3.750324e-06
+Norma do máximo da solução: 1.000046e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries mesh3em5 & 289 & 1377 & 0 & 10 & 3.750324e-06 & 1.000046e+00 & 4.965950e+00 & 0.0033319 s \\ & & & & & & & & \\ [-1em] \hline \\
+
+
+Para 5000 número máximo de iterações e 1.000000e-10 de tolerância
+Tempo de espera: 0.00451517 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 19
+Valor final do resíduo relativo: 6.495063e-12
+Norma do máximo da solução: 1.000000e+00
+Código latex da linha na tabela:
+
+[-1em] \bfseries mesh3em5 & 289 & 1377 & 0 & 19 & 6.495063e-12 & 1.000000e+00 & 4.965950e+00 & 0.00451517 s \\ & & & & & & & & \\ [-1em] \hline \\
