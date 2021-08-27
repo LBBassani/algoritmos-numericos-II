@@ -53,4 +53,4 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries cavity05 & 1182 & 32632 &  & 5.770648e+05 & ILU & sem & 133644 & s & 7.245709e+04 & 0.024977 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries cavity05 & 1182 & ILU & sem & 133644 & s & 72457.1 & 447 & 0 & 27 & 6.987364e-11 & 1.000000e+00 & 2.76892 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries cavity05 & 1182 & ILU & sem & 447 & 0 & 27 & 6.987364e-11 & 1.000000e+00 & 2.76892 s \\ & & & & & & & & & & & \\ [-1em] \hline \\

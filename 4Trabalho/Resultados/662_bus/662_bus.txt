@@ -24,7 +24,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries 662_bus & 662 & 2474 &  & 7.941311e+05 & ICC(0) & com & 2918 & s & 6.574479e+03 & 0.0118921 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries 662_bus & 662 & ICC(0) & com & 2918 & s & 6574.48 & 0 & 5.300000e+01 & 7.447388e-11 & 1.000000e+00 & 0.0568819 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries 662_bus & 662 & ICC(0) & com & 0 & 53 & 7.447388e-11 & 1.000000e+00 & 0.0568819 s \\ & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ICC(0) sem reordenamento
 Número de elementos não nulos: 3702
@@ -43,7 +43,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries 662_bus & 662 & 2474 &  & 7.941311e+05 & ICC(0) & sem & 3702 & s & 5.903236e+03 & 0.000622034 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries 662_bus & 662 & ICC(0) & sem & 3702 & s & 5903.24 & 0 & 7.600000e+01 & 7.837325e-11 & 1.000000e+00 & 0.0569861 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries 662_bus & 662 & ICC(0) & sem & 0 & 76 & 7.837325e-11 & 1.000000e+00 & 0.0569861 s \\ & & & & & & & &  \\ [-1em] \hline \\
 
 Precondicionamento ICC com reordenamento
 Número de elementos não nulos: 4564
@@ -62,7 +62,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries 662_bus & 662 & 2474 &  & 7.941311e+05 & ICC & com & 4564 & s & 3.104181e+04 & 0.00163412 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries 662_bus & 662 & ICC & com & 4564 & s & 31041.8 & 0 & 1.000000e+01 & 9.035513e-12 & 1.000000e+00 & 0.0133121 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries 662_bus & 662 & ICC & com & 0 & 10 & 9.035513e-12 & 1.000000e+00 & 0.0133121 s \\ & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ICC sem reordenamento
 Número de elementos não nulos: 5910
@@ -81,4 +81,4 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries 662_bus & 662 & 2474 &  & 7.941311e+05 & ICC & sem & 5910 & s & 3.131869e+04 & 0.0014472 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries 662_bus & 662 & ICC & sem & 5910 & s & 31318.7 & 0 & 1.000000e+01 & 6.091978e-12 & 1.000000e+00 & 0.014411 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries 662_bus & 662 & ICC & sem & 0 & 10 & 6.091978e-12 & 1.000000e+00 & 0.014411 s \\ & & & & & & & & & & & \\ [-1em] \hline \\

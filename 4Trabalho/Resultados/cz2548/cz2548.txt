@@ -35,7 +35,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries cz2548 & 2548 & 25674 &  & 2.563753e+06 & ILU(0) & com & 33225 & s & 1.083267e+05 & 0.00527596 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries cz2548 & 2548 & ILU(0) & com & 33225 & s & 108327 & 760 & 0 & 241 & 6.971360e-11 & 1.000000e+00 & 9.5068 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries cz2548 & 2548 & ILU(0) & com & 760 & 0 & 241 & 6.971360e-11 & 1.000000e+00 & 9.5068 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ILU(0) sem reordenamento
 Número de elementos não nulos: 36815
@@ -54,7 +54,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries cz2548 & 2548 & 25674 &  & 2.563753e+06 & ILU(0) & sem & 36815 & s & 1.026009e+05 & 0.00266695 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries cz2548 & 2548 & ILU(0) & sem & 36815 & s & 102601 & 760 & 0 & 224 & 9.635935e-11 & 1.000000e+00 & 8.27269 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries cz2548 & 2548 & ILU(0) & sem & 760 & 0 & 224 & 9.635935e-11 & 1.000000e+00 & 8.27269 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ILU com reordenamento
 Número de elementos não nulos: 25958
@@ -73,7 +73,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries cz2548 & 2548 & 25674 &  & 2.563753e+06 & ILU & com & 25958 & s & 3.156199e+06 & 0.0166929 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries cz2548 & 2548 & ILU & com & 25958 & s & 3.1562e+06 & 760 & 0 & 16 & 4.466133e-12 & 1.000000e+00 & 0.219451 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries cz2548 & 2548 & ILU & com & 760 & 0 & 16 & 4.466133e-12 & 1.000000e+00 & 0.219451 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ILU sem reordenamento
 Número de elementos não nulos: 39000
@@ -92,4 +92,4 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries cz2548 & 2548 & 25674 &  & 2.563753e+06 & ILU & sem & 39000 & s & 3.479452e+05 & 0.0171821 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries cz2548 & 2548 & ILU & sem & 39000 & s & 347945 & 760 & 0 & 25 & 1.471816e-11 & 1.000000e+00 & 0.514301 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries cz2548 & 2548 & ILU & sem & 760 & 0 & 25 & 1.471816e-11 & 1.000000e+00 & 0.514301 s \\ & & & & & & & & & & & \\ [-1em] \hline \\

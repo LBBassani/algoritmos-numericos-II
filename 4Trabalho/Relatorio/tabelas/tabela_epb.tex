@@ -1,0 +1,51 @@
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline \rowcolor{Gray}
+        \multicolumn{9}{|c|}{\bfseries Tabela de analise dos precondicionadores }\\
+        \hline \rowcolor{Gray}  \multicolumn{4}{|c|}{} & \multicolumn{5}{|c|}{} \\
+         [-1em]  \rowcolor{Gray}
+         \multicolumn{4}{|c|}{\bfseries Informações da matriz } & \multicolumn{5}{|c|}{\bfseries Informações do precondicionamento }\\
+         \hline \rowcolor{Gray} & & & & & & & &  \\
+         [-1em]
+         \rowcolor{Gray}
+         \bfseries Nome & \bfseries n & \bfseries Não-nulos &  
+         k = cond(A) & Precondicionador & Reordenamento &
+         \bfseries Não-nulos &  
+         k = cond(A)  & tempo (s) \\
+         \hline \\
+         [-1em] \bfseries epb3 & 84617 & 463625 & -1.000000e+00 & ILU(0) & com & 565126 & -1.000000e+00 & 0.101275 s \\ & & & & & & & &  \\ [-1em] \hline \\
+         [-1em] \bfseries epb3 & 84617 & 463625 & -1.000000e+00 & ILU(0) & sem & 571799 & -1.000000e+00 & 0.052027 s \\ & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries epb3 & 84617 & 463625 & -1.000000e+00 & ILU & com & 1500473 & -1.000000e+00 & 10.6831 s \\ & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries epb3 & 84617 & 463625 & -1.000000e+00 & ILU & sem & 1187509 & -1.000000e+00 & 10.1404 s \\ \hline
+    \end{tabular}
+    \caption{Tabela de análise dos precondicionadores utilizados na matriz \textit{epb3}}
+    \label{tab:precond-epb}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline \rowcolor{Gray}
+        \multicolumn{10}{|c|}{\bfseries Tabela do Método GMRES com tolerância $10^{-11}$ e máximo de iterações $10.000$ }\\
+        \hline \rowcolor{Gray}  \multicolumn{2}{|c|}{} & \multicolumn{8}{|c|}{} \\
+         [-1em]  \rowcolor{Gray}
+         \multicolumn{2}{|c|}{\bfseries Informações da matriz } & \multicolumn{8}{|c|}{\bfseries Resultados do método }\\
+         \hline \rowcolor{Gray} & & & & & & & & & \\
+         [-1em]
+         \rowcolor{Gray}
+         \bfseries Nome & \bfseries n & Precond. & Reordenamento & k & flag & iterações &
+         erro relativo &
+         $\|x\|_\infty$  & tempo (s) \\
+         \hline & & & & & & & & & \\
+         [-1em] \bfseries epb3 & 84617 & - & - & 800 & 0 & 7411 & 9.991353e-11 & 1.000001e+00 & 3933.55 s \\ & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries epb3 & 84617 & ILU(0) & sem & 800 & 0 & 150 & 8.829092e-11 & 1.000000e+00 & 101.365 s \\ & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries epb3 & 84617 & ILU(0) & com & 800 & 0 & 185 & 9.210646e-11 & 1.000000e+00 & 174.184 s \\ & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries epb3 & 84617 & ILU & sem & 800 & 0 & 44 & 8.526528e-11 & 1.000000e+00 & 157.286 s \\ & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries epb3 & 84617 & ILU & com & 800 & 0 & 44 & 7.579705e-11 & 1.000000e+00 & 209.548 s \\ \hline
+    \end{tabular}
+    \caption{Tabela de resultados observados na resolução da matriz \textit{epb3} pelo Método GMRES com tolerância $10^{-11}$ e máximo de iterações $10.000$.}
+    \label{tab:resultados-epb}
+\end{table}

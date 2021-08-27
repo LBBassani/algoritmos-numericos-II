@@ -1,0 +1,52 @@
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline \rowcolor{Gray}
+        \multicolumn{9}{|c|}{\bfseries Tabela de analise dos precondicionadores }\\
+        \hline \rowcolor{Gray}  \multicolumn{4}{|c|}{} & \multicolumn{5}{|c|}{} \\
+         [-1em]  \rowcolor{Gray}
+         \multicolumn{4}{|c|}{\bfseries Informações da matriz } & \multicolumn{5}{|c|}{\bfseries Informações do precondicionamento }\\
+         \hline \rowcolor{Gray} & & & & & & & &  \\
+         [-1em]
+         \rowcolor{Gray}
+         \bfseries Nome & \bfseries n & \bfseries Não-nulos &  
+         k = cond(A) & Precondicionador & Reordenamento &
+         \bfseries Não-nulos &  
+         k = cond(A)  & tempo (s) \\
+         \hline \\
+         [-1em] \bfseries cz2548 & 2548 & 25674  & 2.563753e+06 & ILU(0) & com & 33225  & 1.083267e+05 & 0.00527596 s \\ & & & & & & & &  \\ [-1em] \hline \\
+         [-1em] \bfseries cz2548 & 2548 & 25674  & 2.563753e+06 & ILU(0) & sem & 36815  & 1.026009e+05 & 0.00266695 s \\ & & & & & & & &  \\ [-1em] \hline \\
+         [-1em] \bfseries cz2548 & 2548 & 25674  & 2.563753e+06 & ILU & com & 25958  & 3.156199e+06 & 0.0166929 s \\ & & & & & & & &  \\ [-1em] \hline \\
+         [-1em] \bfseries cz2548 & 2548 & 25674  & 2.563753e+06  & ILU & sem & 39000  & 3.479452e+05 & 0.0171821 s \\ \hline
+    \end{tabular}
+    \caption{Tabela de análise dos precondicionadores utilizados na matriz \textit{cz2548}}
+    \label{tab:precond-cz}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline \rowcolor{Gray}
+        \multicolumn{10}{|c|}{\bfseries Tabela do Método GMRES com tolerância $10^{-11}$ e máximo de iterações $10.000$ }\\
+        \hline \rowcolor{Gray}  \multicolumn{2}{|c|}{} & \multicolumn{8}{|c|}{} \\
+         [-1em]  \rowcolor{Gray}
+         \multicolumn{2}{|c|}{\bfseries Informações da matriz } & \multicolumn{8}{|c|}{\bfseries Resultados do método }\\
+         \hline \rowcolor{Gray} & & & & & & & & & \\
+         [-1em]
+         \rowcolor{Gray}
+         \bfseries Nome & \bfseries n & Precond. & Reordenamento & k & flag & iterações &
+         erro relativo &
+         $\|x\|_\infty$  & tempo (s) \\
+         \hline & & & & & & & & & \\
+         [-1em] \bfseries cz2548 & 2548 & - & - & 760 & 0 & 1294 & 9.880078e-11 & 1.000000e+00 & 259.886 s \\ & & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries cz2548 & 2548 & ILU(0) & sem & 760 & 0 & 224 & 9.635935e-11 & 1.000000e+00 & 8.27269 s \\  & & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries cz2548 & 2548 & ILU(0) & com & 760 & 0 & 241 & 6.971360e-11 & 1.000000e+00 & 9.5068 s \\  & & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries cz2548 & 2548 & ILU & sem & 760 & 0 & 25 & 1.471816e-11 & 1.000000e+00 & 0.514301 s \\  & & & & & & & & & \\ [-1em] \hline \\
+         [-1em] \bfseries cz2548 & 2548 & ILU & com & 760 & 0 & 16 & 4.466133e-12 & 1.000000e+00 & 0.219451 s \\ 
+         \hline
+    \end{tabular}
+    \caption{Tabela de resultados observados na resolução da matriz \textit{cz2548} pelo Método GMRES com tolerância $10^{-11}$ e máximo de iterações $10.000$.}
+    \label{tab:resultados-cz}
+\end{table}

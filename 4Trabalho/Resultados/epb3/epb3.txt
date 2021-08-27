@@ -35,7 +35,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU(0) & com & 565126 & s & -1.000000e+00 & 0.101275 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries epb3 & 84617 & ILU(0) & com & 565126 & s & -1 & 800 & 0 & 185 & 9.210646e-11 & 1.000000e+00 & 174.184 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU(0) & com & 800 & 0 & 185 & 9.210646e-11 & 1.000000e+00 & 174.184 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ILU(0) sem reordenamento
 Número de elementos não nulos: 571799
@@ -54,7 +54,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU(0) & sem & 571799 & s & -1.000000e+00 & 0.052027 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries epb3 & 84617 & ILU(0) & sem & 571799 & s & -1 & 800 & 0 & 150 & 8.829092e-11 & 1.000000e+00 & 101.365 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU(0) & sem & 800 & 0 & 150 & 8.829092e-11 & 1.000000e+00 & 101.365 s \\ & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ILU com reordenamento
 Número de elementos não nulos: 1500473
@@ -73,7 +73,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU & com & 1500473 & s & -1.000000e+00 & 10.6831 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries epb3 & 84617 & ILU & com & 1500473 & s & -1 & 800 & 0 & 44 & 7.579705e-11 & 1.000000e+00 & 209.548 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU & com & 800 & 0 & 44 & 7.579705e-11 & 1.000000e+00 & 209.548 s \\ & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ILU sem reordenamento
 Número de elementos não nulos: 1187509
@@ -92,4 +92,4 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries epb3 & 84617 & 463625 &  & -1.000000e+00 & ILU & sem & 1187509 & s & -1.000000e+00 & 10.1404 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries epb3 & 84617 & ILU & sem & 1187509 & s & -1 & 800 & 0 & 44 & 8.526528e-11 & 1.000000e+00 & 157.286 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries epb3 & 84617 & ILU & sem & 800 & 0 & 44 & 8.526528e-11 & 1.000000e+00 & 157.286 s \\ & & & & & & & & \\ [-1em] \hline \\

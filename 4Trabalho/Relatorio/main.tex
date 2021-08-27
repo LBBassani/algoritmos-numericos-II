@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{typearea}
+\usepackage{multirow}
+\usepackage{color, colortbl}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage[pdftex]{hyperref}
+\definecolor{Gray}{RGB}{231, 230, 230}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\title{Exercício 4 - Precondicionadores e Reordenamento}
+\author{Lorena B. Bassani}
+\date{2021}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Este documento relata os resultados do terceiro exercício da disciplina de Algoritmos Numéricos II, no semestre 2021/01 EARTE. O objetivo é observar o comportamento do Método dos Gradientes Conjugados e GMRES para um conjunto de matrizes esparsas da \textit{SuiteSparse Matrix Collection}\footnote{\href{https://sparse.tamu.edu}{https://sparse.tamu.edu}} considerarando precondicionamento e reordenamento.
+\end{abstract}
+
+\section{Introdução}
+Para a primeira etapa deste exercício, foram utilizadas quatro matrizes quadradas esparsas, a \textit{mesh3em5} de $289$ linhas e colunas, a \textit{662\_bus} com $662$, a \textit{pdb1HYS} com $36.417$ e a \textit{Dubcova3} de dimensão $146.689$, e para a segunda etapa, foram utilizadas três matrizes quadradas esparsas, a \textit{cavity05} com $1.182$ linhas e colunas, a \textit{cz2548} com $2.548$ e a \textit{epb3} de dimensão $84.617$, obtidas da coleção de matrizes esparsas \textit{SuiteSparse Matrix Collection}. Nessas sete matrizes, foram realizadas análises quanto ao comportamento da aplicação de diferentes precondicionadores, com e sem reordenamento, utilizando a ferramenta Octave. Na seção~\ref{sec:resultados} são relatadas algumas observações sobre a utilização deste método para resolução de sistemas lineares, e na última parte do trabalho, nas seções~\ref{sec:figures} e~\ref{sec:tabelas}, se encontram as figuras e as tabelas com os resultados obtidos, respectivamente.
+
+\section{Exercício Proposto -- Precondicionadores e Reordenamento}
+\label{sec:resultados}
+O objetivo deste exercício é observar o comportamento de matrizes esparsas na solução de sistemas lineares via métodos iterativos não estacionários, considerando precondicionamento e reordenamento. Para isto, as matrizes escolhidas foram submetidas a métodos de precondicionamento e reordenamento e utilizadas como matriz de coeficientes para solução de sistemas lineares através de método nativo do Octave, e foram observados uma série de fatores quanto ao comportamento das matrizes a respeito da convergência da resposta e seu número de condicionamento.
+
+\subsection{Fatoração Incompleta de Cholesky -- ICC}
+
+Na primeira parte do exercício, foi estudado o método da fatoração incompleta de Cholesky-ICC. Para isto, cada uma das quatro primeiras matrizes eram submetidas a duas configurações diferentes do método: a fatoração ICC(0), ou \textit{incomplete Cholesky with zero-fill}\footnote{De acordo com a documentação do método Octave ichol, disponível em: \href{https://octave.sourceforge.io/octave/function/ichol.html}{https://octave.sourceforge.io/octave/function/ichol.html}}, e a fatoração \textit{incomplete Cholesky with threshold dropping}. Cada uma foi realizada com e sem reordenamento. O resultado foi testado aplicando-o como entrada para o método dos gradientes conjugados, estudado no Exercício 2.
+
+O método dos gradientes conjugados é um dos métodos que levariam a uma resposta exata em $n$ passos, a menos de erros de arredondamento, porém, levando em consideração que a maior parte do decrescimento do erro ocorre nos passos primários, ele é tratado como método iterativo, parando após atingir critérios de tolerância do erro. Isso faz com que o método, para matrizes bem condicionadas, convirja rapidamente, em pouquíssimas iterações quando comparado a dimensão da própria matriz. A ideia do uso de precondicionadores é melhorar o condicionamento da matriz de entrada, para melhorar a convergência do método.
+
+Um dos passos realizados nas duas menores matrizes para verificar a diferença entre a matriz original e a matriz resultante do precondicionamento foi calcular o número de condicionamento delas\footnote{As matrizes \textit{pdb1HYS} e \textit{Dubcova3} não permitiram o calculo do número de condicionamento por serem muito grandes, causando fechamento forçado do programa Octave depois de certo tempo do início da operação. A operação de cálculo de condicionamento é tão ou até mais custosa do que a própria solução do sistema linear, podendo até não ser possível em alguns casos, como observado.}. Na \textit{mesh3em5}, o precondicionamento não alterou o número de condicionamento de forma significativa, de forma que este permaneceu o mesmo até as primeiras quatro casas decimais. O número de condicionamento dessa matriz ficou, assim, próximo de $4,9659$ tanto na original quanto nas precondicionadas. Já na matriz \textit{662\_bus}, o método de precondicionamento diminuiu o número de precondicionamento, levando de $7,941\times 10^5$ para seu menor número em $5,903\times 10^3$ com o precondicionamento ICC(0) sem reordenamento.
+
+Outras observações realizadas antes de submeter as matrizes ao método dos gradientes conjugados foi a alteração do número de elementos não nulos. A matriz \textit{mesh3em5} possuía originalmente $1.377$ elementos não nulos, atingindo um máximo de $1.891$ com o precondicionamento ICC(0) sem reordenamento, e um mínimo de 833 no ICC, tanto com quanto sem reordenamento. Na matriz \textit{662\_bus}, que tinha originalmente $2.474$ elementos não nulos, encontrou um máximo de $5.910$ no precondicionamento ICC sem reordenamento. A matriz \textit{pdb1HYS} saiu de $4.344.765$ elementos não nulos para um máximo de $10.409.889$ com o precondicionamento ICC(0) sem reordenamento. Por fim, a matriz \textit{Dubcova3} partindo de $3.636.643$ elementos não nulos, conseguiu aumentar até $52.898.003$ no precondicionamento ICC sem reordenamento. Com exceção da \textit{mesh3em5} que conseguiu diminuir o número de elementos não nulos com o ICC, as matrizes tiveram aumentos significativos de elementos não nulos.
+
+Ao aplicar os métodos de precondicionamento nas matrizes, foram encontrados problemas no ICC para a matriz \textit{pdb1HYS}. Em ambos casos, o método retornou com o erro \textit{negative pivot encountered}. Dessa forma, esta matriz foi estudada apenas quanto a aplicação do ICC(0) com e sem reordenamento. Além de gerar gráficos para comparação da solução para a melhoria na convergência das matrizes, algumas matrizes menores puderam ser observadas quanto ao preenchimento através do método spy\footnote{Não foi possível gerar visualização da matriz \textit{Dubcova3} por questões de limitação de memória da máquina utilizada para o trabalho}.
+
+\subsection{Fatoração LU incompleta -- ILU}
+Na segunda parte do exercício, foi estudado o método da fatoração LU incompleta--ILU. Para isto, as três últimas matrizes da lista foram submetidas a duas configurações diferentes do método: a fatoração ILU(0), ou \textit{ILU factorization with no fill-in}\footnote{De acordo com a documentação do método Octave ilu, disponível em: \href{https://octave.sourceforge.io/octave/function/ilu.html}{https://octave.sourceforge.io/octave/function/ilu.html}}, e a \textit{Crout version of ILU factorization}. Cada uma foi realizada com e sem reordenamento. O resultado foi testado aplicando-o como entrada para o método do resíduo mínimo generalizado, ou GMRES, estudao no Exercício 3.
+
+O método do resíduo mínimo generalizado é um método iterativo não estacionário para resolver sistemas com matrizes quadradas esparsas não-simétricas, que baseia-se nos métodos de projeção ortogonal sobre um subespaço de Krylov. Sua versão pura garante convergência em no máximo $n$ iterações, porém sua complexidade temporal é de $\mathcal{O}(n^3)$ e complexidade espacial é de $\mathcal{O}(n^2)$, tornando-o computacionalmente muito custoso para $n$ muito grande. Dessa forma, neste trabalho utiliza-se a versão reiniciada, onde se considera um subespaço de krylov de dimensão $k$, iterando sob a diminuição do resíduo. Sua complexidade temporal se torna $\mathcal{O}(kn^2)$ e complexidade espacial $\mathcal{O}(kn)$. Infelizmente, essa versão perde a garantia de convergência e ainda possui a dificuldade inerente de encontrar um valor ideal para $k$. Para esta atividade, foram utilizados os valores de $k$ retirados dos resultados do experimento do Exercício 3.
+
+Um dos passos realizados das duas menores matrizes para verificar a diferença entre a matriz original e a matriz resultante do precondicionamento foi calcular o número de condicionamento delas\footnote{A matriz \textit{epb3} não permitiu o calculo do número de condicionamento por ser muito grande, da mesma forma que as matrizes \textit{pdb1HYS} e \textit{Dubcova3}, observadas anteriormente.}. A matriz \textit{cavity05} possuía um número de condicionamento igual a $5,77\times 10^5$ originalmente, e conseguiu diminuir para $7,245\times10^4$ com o precondicionamento ILU sem reordenamento. Enquanto a matriz \textit{cz2548} conseguiu diminuir seu número de condicionamento de $2,564\times10^6$ para um mínimo de $1,026\times10^5$ com o precondicionamento ILU(0) sem reordenamento.
+
+Outras observações realizadas antes de submeter as matrizes ao método do resíduo mínimo generalizado foi a alteração do número de elementos não nulos. Na matriz \textit{cavity05}, com originalmente $32.632$ elementos não nulos, teve um aumento para $133.644$ elementos não nulos com o precondicionamento ILU sem reordenamento. A matriz \textit{cz2548}, partindo de $25.674$ elementos não nulos, teve um aumento pequeno para $39.000$ elementos não nulos, quando comparado com a \textit{cavity05}. Por último, a matriz \textit{epb3}, que tinha originalmente $463.625$ elementos não nulos, chegou a $1.500.473$ elementos não nulos no precondicionamento ILU com reordenamento.
+
+Durante a aplicação dos precondicionadores, a matriz \textit{cavity05} teve problema em todos os casos menos para o precondicionamento ILU sem reordenamento. Para a mesma versão com reordenamento, foi obtido o erro \textit{encountered a pivot equal to 0}, enquanto que para o precondicionamento ILU(0) foi encontrado o erro \textit{A has a zero on the diagonal} tanto com quando sem reordenamento. Dessa forma, a matriz foi estudada apenas quanto a aplicação do ILU sem reordenamento. Além de gerar gráficos para comparação da solução quanto a melhoria na convergência da matrizes, foram geradas imagens para observação do preenchimento das matrizes através do método spy.
+
+\storeareas\normalsetting
+\KOMAoption{paper}{landscape}
+\areaset{2\textwidth}{.95\textheight}
+\recalctypearea
+
+\section{Figuras dos resultados observados}
+\label{sec:figures}
+
+\input{figures/mesh-figures}
+\input{figures/bus-figures}
+\input{figures/pdb1HYS-figures}
+\input{figures/Dubcova3-figures}
+\input{figures/cavity-figures}
+\input{figures/cz-figures}
+\input{figures/epb-figures}
+
+\section{Tabelas dos resultados observados}
+\label{sec:tabelas}
+
+\input{tabelas/tabela_mesh}
+\input{tabelas/tabela_bus}
+\input{tabelas/tabela_pdb}
+\input{tabelas/tabela_Dub}
+\input{tabelas/tabela-cavity}
+\input{tabelas/tabela_cz}
+\input{tabelas/tabela_epb}
+
+\clearpage
+\normalsetting
+
+\end{document}

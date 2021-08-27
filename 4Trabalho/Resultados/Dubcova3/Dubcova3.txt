@@ -24,7 +24,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC(0) & com & 4769297 & s & -1.000000e+00 & 0.913333 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries Dubcova3 & 146689 & ICC(0) & com & 4769297 & s & -1 & 0 & 9.700000e+01 & 9.742899e-11 & 1.000000e+00 & 299.55 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC(0) & com & 0 & 97 & 9.742899e-11 & 1.000000e+00 & 299.55 s \\ & & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ICC(0) sem reordenamento
 Número de elementos não nulos: 16025173
@@ -43,7 +43,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC(0) & sem & 16025173 & s & -1.000000e+00 & 1.03894 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries Dubcova3 & 146689 & ICC(0) & sem & 16025173 & s & -1 & 0 & 1.430000e+02 & 9.606530e-11 & 1.000000e+00 & 1575.17 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC(0) & sem & 0 & 143 & 9.606530e-11 & 1.000000e+00 & 1575.17 s \\ & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ICC com reordenamento
 Número de elementos não nulos: 8061119
@@ -62,7 +62,7 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC & com & 8061119 & s & -1.000000e+00 & 1.71888 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries Dubcova3 & 146689 & ICC & com & 8061119 & s & -1 & 0 & 2.600000e+01 & 2.954087e-11 & 1.000000e+00 & 138.95 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC & com & 0 & 26 & 2.954087e-11 & 1.000000e+00 & 138.95 s \\ & & & & & & & & \\ [-1em] \hline \\
 
 Precondicionamento ICC sem reordenamento
 Número de elementos não nulos: 52898003
@@ -81,4 +81,4 @@ Norma do máximo da solução: 1.000000e+00
 Código latex da linha na tabela:
 
 [-1em] \bfseries Dubcova3 & 146689 & 3636643 &  & -1.000000e+00 & ICC & sem & 52898003 & s & -1.000000e+00 & 7.16305 s \\ & & & & & & & & & & \\ [-1em] \hline \\
-[-1em] \bfseries Dubcova3 & 146689 & ICC & sem & 52898003 & s & -1 & 0 & 3.200000e+01 & 6.821619e-11 & 1.000000e+00 & 1842 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
+[-1em] \bfseries Dubcova3 & 146689 & ICC & sem & 0 & 32 & 6.821619e-11 & 1.000000e+00 & 1842 s \\ & & & & & & & & & & & \\ [-1em] \hline \\
