@@ -33,7 +33,9 @@ function teste()
   resp = f(x);
   plot(x, resp, ";original;", "linestyle", "-");
   hold off
-  b = waitforbuttonpress ();
+  title("Primeiro teste de validação");
+  print("validacao/validacao_1.png");
+  clf
 
   % Segundo teste: 
   % y'' = 1
@@ -66,7 +68,9 @@ function teste()
   resp = f(x);
   plot(x, resp, ";original;", "linestyle", "-");
   hold off
-  b = waitforbuttonpress ();
+  title("Segundo teste de validação");
+  print("validacao/validacao_2.png");
+  clf
 
   % Terceiro teste: 
   % y'' = x + 1
@@ -99,7 +103,9 @@ function teste()
   resp = f(x);
   plot(x, resp, ";original;", "linestyle", "-");
   hold off
-  b = waitforbuttonpress ();
+  title("Terceiro teste de validação");
+  print("validacao/validacao_3.png");
+  clf
 
   % Quarto teste
   % y'' - (1/2)y' + y = x^2 + 1/2
@@ -132,7 +138,9 @@ function teste()
   resp = f(x);
   plot(x, resp, ";original;", "linestyle", "-");
   hold off
-  b = waitforbuttonpress ();
+  title("Quarto teste de validação");
+  print("validacao/validacao_4.png");
+  close
 
   %%%%% Assinatura: function [x,u] = pvc(a,b,n,tipo_a,ua,sigma_a,alfa_a,beta_a,gamma_a,tipo_b,ub,sigma_b,alfa_b,beta_b,gamma_b);
 endfunction
