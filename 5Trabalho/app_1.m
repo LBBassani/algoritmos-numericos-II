@@ -9,11 +9,11 @@ function app_1()
   T_a = 40; % ºC
   T_b = 200; % ºC
 
-  % y'' - y' = K*T_ar
-  % p(x) = -1, q(x) = 0, r(x) = K*T_ar
-  p = @(x) -1;
-  q = @(x) 0;
-  r = @(x) K*T_ar;
+  % y'' - K*y = - K*T_ar
+  % p(x) = 0, q(x) = 0, r(x) = K*T_ar
+  p = @(x) 0;
+  q = @(x) - K;
+  r = @(x) - K*T_ar;
 
   tipo_a = 1;
   ua = T_a;

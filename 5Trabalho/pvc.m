@@ -52,7 +52,7 @@ function [x,u]=pvc(a,b,n,tipo_a,ua,sigma_a,alfa_a,beta_a,gamma_a,tipo_b,ub,sigma
             A(n, n) = 1;
             f(n) = ub;
         case 2 % derivada prescrita
-            A(n, n - 1) = A(n,n) + cn;
+            A(n, n) = A(n,n) + cn;
             f(n) = f(n) - cn*h*sigma_b;
         case 3 % misto
             A(n,n) = A(n,n)  + cn* (1 - (h*beta_b)/alfa_b);
