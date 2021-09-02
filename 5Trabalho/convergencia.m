@@ -29,20 +29,29 @@ function convergencia()
     norma_err = zeros(1, length(n));
     h = zeros(1, length(n));
 
+    
     for i = 1:length(n)
         [x,u] = pvc(a,b,n(i),tipo_a,ua,sigma_a,alfa_a,beta_a,gamma_a,tipo_b,ub,sigma_b,alfa_b,beta_b,gamma_b, p, q, r);
+        plot (x, u, strjoin({";pvc n = ", int2str(n(i)), ";"}), "linestyle" , "--");
+        hold on
         resp = f(x);
         err = resp - u;
         norma_err(i) = norm(err, Inf);
         h(i) = (b-a)/(n(i)-1);
     endfor
+    resp = f(x);
+    plot(x, resp, ";original;", "linestyle", "-");
+    hold off
+    title("Teste de convergencia problema 1");
+    print("validacao/teste_1.png");
+    clf
     fitting = polyfit (log(h), log(norma_err), 1);
     p = fitting(1);
     log_C = fitting(2);
     x = log(h);
     y = polyval (fitting, x);
     
-    title("Primeiro teste de validação");
+    
     plot(log(h), log(norma_err), ";norma;", "marker","o");
     hold on
     plot(x, y, ";polyfit;");
@@ -54,6 +63,7 @@ function convergencia()
     xlabel("h");
     ylabel("norma do erro");
     hold off
+    title("Primeiro teste de validação");
     print("validacao/convergencia_1.png");
     clf
     
@@ -80,20 +90,29 @@ function convergencia()
     norma_err = zeros(1, length(n));
     h = zeros(1, length(n));
 
+    
     for i = 1:length(n)
         [x,u] = pvc(a,b,n(i),tipo_a,ua,sigma_a,alfa_a,beta_a,gamma_a,tipo_b,ub,sigma_b,alfa_b,beta_b,gamma_b, p, q, r);
+        plot (x, u, strjoin({";pvc n = ", int2str(n(i)), ";"}), "linestyle" , "--");
+        hold on
         resp = f(x);
         err = resp - u;
         norma_err(i) = norm(err, Inf);
         h(i) = (b-a)/(n(i)-1);
     endfor
+    resp = f(x);
+    plot(x, resp, ";original;", "linestyle", "-");
+    hold off
+    title("Teste de convergencia problema 2");
+    print("validacao/teste_2.png");
+    clf
     fitting = polyfit (log(h), log(norma_err), 1);
     p = fitting(1);
     log_C = fitting(2);
     x = log(h);
     y = polyval (fitting, x);
     
-    title("Segundo teste de validação");
+    
     plot(log(h), log(norma_err), ";norma;", "marker","o");
     hold on
     plot(x, y, ";polyfit;");
@@ -105,6 +124,7 @@ function convergencia()
     xlabel("h");
     ylabel("norma do erro");
     hold off
+    title("Segundo teste de validação");
     print("validacao/convergencia_2.png");
     clf
     
@@ -131,20 +151,29 @@ function convergencia()
     norma_err = zeros(1, length(n));
     h = zeros(1, length(n));
 
+    
     for i = 1:length(n)
         [x,u] = pvc(a,b,n(i),tipo_a,ua,sigma_a,alfa_a,beta_a,gamma_a,tipo_b,ub,sigma_b,alfa_b,beta_b,gamma_b, p, q, r);
+        plot (x, u, strjoin({";pvc n = ", int2str(n(i)), ";"}), "linestyle" , "--");
+        hold on
         resp = f(x);
         err = resp - u;
         norma_err(i) = norm(err, Inf);
         h(i) = (b-a)/(n(i)-1);
     endfor
+    resp = f(x);
+    plot(x, resp, ";original;", "linestyle", "-");
+    hold off
+    title("Teste de convergencia problema 3");
+    print("validacao/teste_3.png");
+    clf
     fitting = polyfit (log(h), log(norma_err), 1);
     p = fitting(1);
     log_C = fitting(2);
     x = log(h);
     y = polyval (fitting, x);
     
-    title("Terceiro teste de validação");
+    
     plot(log(h), log(norma_err), ";norma;", "marker","o");
     hold on
     plot(x, y, ";polyfit;");
@@ -156,6 +185,7 @@ function convergencia()
     xlabel("h");
     ylabel("norma do erro");
     hold off
+    title("Terceiro teste de validação");
     print("validacao/convergencia_3.png");
     clf
    
@@ -182,20 +212,29 @@ function convergencia()
     norma_err = zeros(1, length(n));
     h = zeros(1, length(n));
 
+    
     for i = 1:length(n)
         [x,u] = pvc(a,b,n(i),tipo_a,ua,sigma_a,alfa_a,beta_a,gamma_a,tipo_b,ub,sigma_b,alfa_b,beta_b,gamma_b, p, q, r);
+        plot (x, u, strjoin({";pvc n = ", int2str(n(i)), ";"}), "linestyle" , "--");
+        hold on
         resp = f(x);
         err = resp - u;
         norma_err(i) = norm(err, Inf);
         h(i) = (b-a)/(n(i)-1);
     endfor
+    resp = f(x);
+    plot(x, resp, ";original;", "linestyle", "-");
+    hold off
+    title("Teste de convergencia problema 4");
+    print("validacao/teste_4.png");
+    clf
     fitting = polyfit (log(h), log(norma_err), 1);
     p = fitting(1);
     log_C = fitting(2);
     x = log(h);
     y = polyval (fitting, x);
     
-    title("Quarto teste de validação");
+    
     plot(log(h), log(norma_err), ";norma;", "marker","o");
     hold on
     plot(x, y, ";polyfit;");
@@ -207,6 +246,7 @@ function convergencia()
     xlabel("h");
     ylabel("norma do erro");
     hold off
+    title("Quarto teste de validação");
     print("validacao/convergencia_4.png");
     
     close
