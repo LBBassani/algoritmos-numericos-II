@@ -1,7 +1,7 @@
  function [a,b,c,d,e] = coeficientes (hx,hy,kappa,bx,by,gamma,n,m);
 
    N = n*m;
-   a = b = c = d = e = ones(N, 1);
+   a = b = c = d = e = zeros(N, 1);
    
    for I=1:N
       a(I) = gamma(I) + 2.0*kappa*(1.0/(hx^2) + 1.0/(hy^2));

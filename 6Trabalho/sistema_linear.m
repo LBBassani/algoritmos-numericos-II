@@ -5,26 +5,25 @@ function [A,f] = sistema_linear (a,b,c,d,e,fun,n,m)
  f = zeros(N,1);
 
 
- for i = 1:N
+ for I = 1:N
    
-   if i >= n + 1
-      A(i,i-n) = d(i);
+   if I >= n + 1
+      A(I,I-n) = d(I);
    endif
-   if i > 1
-      A(i,i-1) = b(i);
+   if I > 1
+      A(I,I-1) = b(I);
    endif
    
-   A(i,i) = a(i);
+   A(I,I) = a(I);
    
-   if i < N
-      A(i,i+1) = c(i); 
+   if I < N
+      A(I,I+1) = c(I); 
    endif
-   if i <= N - n
-      A(i,i+n) = e(i);
+   if I <= N - n
+      A(I,I+n) = e(I);
    endif
-   f(i) = fun(i); 
+   f(I) = fun(I); 
  endfor
 
- 
 endfunction
 

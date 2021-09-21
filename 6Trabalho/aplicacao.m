@@ -76,19 +76,22 @@ function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop]
   u_y_y = @(x, y) 20 .* e.^(x.^4.5) .* (-1 + x) .* x;
   
   [X, Y] = meshgrid(x, y);
+  N = n*m;
   ureal = u(X, Y);
+    bx = ones(N, 1);
+    by = zeros(N, 1);
+    gamma = ones(N, 1);
   
  I = 1;
  for j = 1:m
      for i = 1:n
-         bx(I) = 1.0;
          by(I) = 20.0*y(j);
-         gamma(I) = 1.0;
          I++;
      endfor
  endfor
  
  fun = -kappa * (u_x_x(X, Y)'(:) + u_y_y(X, Y)'(:)) + bx .* u_x(X, Y)'(:) + by .* u_y(X, Y)'(:) + ureal'(:);
+ 
  
  switch ver
    case 1

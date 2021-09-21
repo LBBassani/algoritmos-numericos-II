@@ -2,25 +2,25 @@
 function [A,f] = condicoes_contorno (A,f,n,m,left,gleft,right,gright,bottom,gbottom,top,gtop,a,b,c,d,e,hx,hy,kappa)
   
 %
-%  Contorno  "left" nos nós I = 1,n+1,...,(m-1)*n+1 : 
-% = 1 então "gleft" é o valor prescrito "g" ;
-% = 2 então "gleft" é o valor do fluxo "sigma";
-% = 3 então "gleft" será um vetor ["alfa", "beta","gama"], onde gleft(1,1)=alfa; gleft(1,2)=beta; gleft(1,3)=gama;
+%  Contorno  "left" nos nï¿½s I = 1,n+1,...,(m-1)*n+1 : 
+% = 1 entï¿½o "gleft" ï¿½ o valor prescrito "g" ;
+% = 2 entï¿½o "gleft" ï¿½ o valor do fluxo "sigma";
+% = 3 entï¿½o "gleft" serï¿½ um vetor ["alfa", "beta","gama"], onde gleft(1,1)=alfa; gleft(1,2)=beta; gleft(1,3)=gama;
 %
-%  Contorno  "right" nos nós I = n,2*n,...,(m-1)*n, m*n:
-% = 1 então "gright" é o valor prescrito ;
-% = 2 então "gright" é o valor do fluxo sigma;
-% = 3 então "gright" será um vetor ["alfa", "beta","gama"], onde gright(1,1)=alfa; gright(1,2)=beta; gright(1,3)=gama;  
+%  Contorno  "right" nos nï¿½s I = n,2*n,...,(m-1)*n, m*n:
+% = 1 entï¿½o "gright" ï¿½ o valor prescrito ;
+% = 2 entï¿½o "gright" ï¿½ o valor do fluxo sigma;
+% = 3 entï¿½o "gright" serï¿½ um vetor ["alfa", "beta","gama"], onde gright(1,1)=alfa; gright(1,2)=beta; gright(1,3)=gama;  
 %
-%  Contorno  "bottom" nos nós I = 2,3,...,(n-1):
-% = 1 então "gbottom" é o valor prescrito ;
-% = 2 então "gbottom" é o valor do fluxo sigma;
-% = 3 então "gbottom" será um vetor ["alfa", "beta","gama"], onde gbotton(1,1)=alfa; gbotton(1,2)=beta; gbottom(1,3)=gama;  
+%  Contorno  "bottom" nos nï¿½s I = 2,3,...,(n-1):
+% = 1 entï¿½o "gbottom" ï¿½ o valor prescrito ;
+% = 2 entï¿½o "gbottom" ï¿½ o valor do fluxo sigma;
+% = 3 entï¿½o "gbottom" serï¿½ um vetor ["alfa", "beta","gama"], onde gbotton(1,1)=alfa; gbotton(1,2)=beta; gbottom(1,3)=gama;  
 %
-%  Contorno  "top" nos nós I = (m-1)*n+2,...,m*n-1:
-% = 1 então "gtop" é o valor prescrito ;
-% = 2 então "gtop" é o valor do fluxo sigma;
-% = 3 então "gtop" será um vetor ["alfa", "beta","gama"], onde gtop(1,1)=alfa; gtop(1,2)=beta; gtop(1,3)=gama;
+%  Contorno  "top" nos nï¿½s I = (m-1)*n+2,...,m*n-1:
+% = 1 entï¿½o "gtop" ï¿½ o valor prescrito ;
+% = 2 entï¿½o "gtop" ï¿½ o valor do fluxo sigma;
+% = 3 entï¿½o "gtop" serï¿½ um vetor ["alfa", "beta","gama"], onde gtop(1,1)=alfa; gtop(1,2)=beta; gtop(1,3)=gama;
 %
 
 N = n*m;
@@ -37,7 +37,7 @@ switch left
        a_index = sub2ind([N N], I, I);
        A(a_index) = a(I) = a(I) + b(I);
        
-       f(I) = f(I) + b(I)*(hx/kappa).*gleft(I);
+       f(I) = f(I) + b(I).*(hx/kappa).*gleft(I);
        
        I(1) = [];
        a_index = sub2ind([N N], I, I-1);
@@ -117,7 +117,6 @@ endfunction
 function [A,f] = valor_prescrito (A, f, v, I)
     N = rows(A);
     a_index = sub2ind([N N], I, I);
-    
     A(I, :) = 0; 
     A(a_index) = 1;
     f(I) = v;
