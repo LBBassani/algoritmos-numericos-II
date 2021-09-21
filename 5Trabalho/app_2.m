@@ -13,11 +13,11 @@ function app_2()
     for j = 1:length(c_ref)    
         
         C = ((2*W + 2*T)/T*W) * c_ref(j);
-        r = @(x) -(C*u_ref)/K;
         
-        % y'' + Cy = (-1/K)f(x)
+        % y'' - (C/K)y = (-1/K)f(x)
         p = @(x) 0;
         q = @(x) -C/K;
+        r = @(x) -(C*u_ref)/K;
         
         tipo_a = 1;
         a = 0;
