@@ -49,9 +49,9 @@ switch left
        beta_index = sub2ind([N N], I, ones(1, length(I))*2);
        gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
        
-       A(a_index) = a(I) = a(I) + b(I).*( 1 - hx * gleft(beta_index) ./ gleft(alpha_index) );
+       A(a_index) = a(I) = a(I) + b(I).*( 1 - hx * (gleft(beta_index) ./ gleft(alpha_index) ) )';
        
-       f(I) = f(I) - hx*( b(I).*(gleft( gamma_index) ./ gleft(alpha_index) ) );
+       f(I) = f(I) - hx*( b(I).*(gleft( gamma_index) ./ gleft(alpha_index) )' );
        
        I(1) = [];
        a_index = sub2ind([N N], I, I-1);
@@ -83,12 +83,12 @@ case 3
      beta_index = sub2ind([N N], I, ones(1, length(I))*2);
      gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
      
-     A(a_index) = a(I) = a(I) + c(I).*( 1 - hx * gright(beta_index) ./ gright(alpha_index) );
-     f(I) = f(I) - hx*( c(I).*(gright( gamma_index) ./ gright(alpha_index) ) );
+     A(a_index) = a(I) = a(I) + c(I).*( 1 - hx * gright(beta_index) ./ gright(alpha_index) )';
+     f(I) = f(I) - hx*( c(I).*(gright( gamma_index) ./ gright(alpha_index) )' );
        
      I(length(I)) = [];
      a_index = sub2ind([N N], I, I-1);
-     A(a_index) = b(I) = 0;
+     A(a_index) = c(I) = 0;
 otherwise
        printf("Erro na Condicao de contorno"); 
 end
@@ -111,8 +111,8 @@ case 3
      beta_index = sub2ind([N N], I, ones(1, length(I))*2);
      gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
      
-     A(a_index) = a(I) = a(I) + d(I).*( 1 - hy * gbottom(beta_index) ./ gbottom(alpha_index) );
-     f(I) = f(I) - hy*( d(I).*(gbottom( gamma_index) ./ gbottom(alpha_index) ) );
+     A(a_index) = a(I) = a(I) + d(I).*( 1 - hy * gbottom(beta_index) ./ gbottom(alpha_index) )';
+     f(I) = f(I) - hy*( d(I).*(gbottom( gamma_index) ./ gbottom(alpha_index) )' );
 
 otherwise
        printf("Erro na Condicao de contorno"); 
@@ -139,8 +139,8 @@ case 3
      beta_index = sub2ind([N N], I, ones(1, length(I))*2);
      gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
      
-     A(a_index) = a(I) = a(I) + e(I).*( 1 - hy * gtop(beta_index) ./ gtop(alpha_index) );
-     f(I) = f(I) - hy*( e(I).*(gtop( gamma_index) ./ gtop(alpha_index) ) );
+     A(a_index) = a(I) = a(I) + e(I).*( 1 - hy * gtop(beta_index) ./ gtop(alpha_index) )';
+     f(I) = f(I) - hy*( e(I).*(gtop( gamma_index) ./ gtop(alpha_index) )' );
      
 otherwise
        printf("Erro na Condicao de contorno"); 

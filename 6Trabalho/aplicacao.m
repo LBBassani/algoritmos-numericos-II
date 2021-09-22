@@ -93,10 +93,11 @@ function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop]
  endfor
  
  fun = -kappa * (u_x_x(X, Y)'(:) + u_y_y(X, Y)'(:)) + bx .* u_x(X, Y)'(:) + by .* u_y(X, Y)'(:) + ureal'(:);
- 
+ x_index = @(I) rem(I - 1, n) + 1;
+ y_index = @(I) floor((I - 1)/n) + 1;
  
  switch ver
-   case 1
+   case 1 # valor prescrito
        
      left = 1;
      gleft = 0.0;
@@ -110,33 +111,7 @@ function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop]
      top = 1;
      gtop = 0.0;
    
-    case 2 # valor prescrito
-   
-     x_index = @(I) rem(I, n);
-     y_index = @(I) floor(I/n) + 1;
-          
-     I = [1:n:(m-1)*n+1];
-     gleft = sparse(n*m,1);
-          
-     x_i = x(x_index(I));
-     y_i = y(y_index(I));
-     du = u_x(x_i, y_i);
-     
-     left = 2;
-     gleft(I) = du*kappa;
-   
-     right = 1;
-     gright = 0.0;
-
-     bottom = 1; 
-     gbottom = 0.0;
-
-     top = 1;
-     gtop = 0.0;
-     
-    case 3 # fluxo prescrito
-     x_index = @(I) rem(I - 1, n) + 1;
-     y_index = @(I) floor((I - 1)/n) + 1;
+    case 2 # fluxo prescrito
      
      # fluxo prescrito a esquerda
      left = 2;
@@ -180,8 +155,74 @@ function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop]
      y_i = y(y_index(I));
      
      du = u_y(x_i, y_i);
-     gbottom(I) = -du./kappa; 
+     gbottom(I) = -du./kappa;
+     
+    case 3 # misto
+      
+     # esquerda 
+     left = 3;
+     I = [1:n:(m-1)*n+1];
+     gleft = sparse(n*m, 3);
+     
+     alpha_index = sub2ind([N N], I, ones(1, length(I)));
+     beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+     gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+     
+     gleft(alpha_index) = 1.0;
+     gleft(beta_index) = 1.0;
+     
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     gleft(gamma_index) = -u_x(x_i, y_i) + u(x_i, y_i);
 
+     # direita
+     right = 3;
+     I = [n:n:m*n];
+     gright = sparse(n*m, 3);
+
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     
+     alpha_index = sub2ind([N N], I, ones(1, length(I)));
+     beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+     gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+     
+     gright(alpha_index) = 1.0;
+     gright(beta_index) = 1.0;
+     gright(gamma_index) = u_x(x_i, y_i) + u(x_i, y_i);
+
+     # para baixo
+     bottom = 3; 
+     I = [2:1:n-1];
+     gbottom = sparse(n*m, 3);
+     
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     
+     alpha_index = sub2ind([N N], I, ones(1, length(I)));
+     beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+     gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+     
+     gbottom(alpha_index) = 1.0;
+     gbottom(beta_index) = 1.0;
+     gbottom(gamma_index) = -u_y(x_i, y_i) + u(x_i, y_i);
+
+     # para cima
+     top = 3;
+     I = [(m-1)*n+2:1:m*n-1];
+     gtop = sparse(n*m, 3);
+     
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     
+     alpha_index = sub2ind([N N], I, ones(1, length(I)));
+     beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+     gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+     
+     gtop(alpha_index) = 1.0;
+     gtop(beta_index) = 1.0;
+     gtop(gamma_index) = u_y(x_i, y_i) + u(x_i, y_i);
+   
  endswitch 
 endfunction
 
