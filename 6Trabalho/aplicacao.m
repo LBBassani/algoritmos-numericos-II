@@ -8,6 +8,8 @@ function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop]
       [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = aplicacao3 (x,y,n,m,1);
     case 4
       [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = aplicacao3 (x,y,n,m,2);
+    case 5
+      [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = aplicacao3 (x,y,n,m,3);
   endswitch
 endfunction
 
@@ -108,12 +110,11 @@ function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop]
      top = 1;
      gtop = 0.0;
    
-    case 2
+    case 2 # valor prescrito
    
      x_index = @(I) rem(I, n);
      y_index = @(I) floor(I/n) + 1;
           
-
      I = [1:n:(m-1)*n+1];
      gleft = sparse(n*m,1);
           
@@ -132,6 +133,54 @@ function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop]
 
      top = 1;
      gtop = 0.0;
+     
+    case 3 # fluxo prescrito
+     x_index = @(I) rem(I - 1, n) + 1;
+     y_index = @(I) floor((I - 1)/n) + 1;
+     
+     # fluxo prescrito a esquerda
+     left = 2;
+     I = [1:n:(m-1)*n+1];
+     gleft = sparse(n*m,1);
+     
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     
+     du = u_x(x_i, y_i);
+     gleft(I) = du*kappa;
+     
+     # fluxo prescrito a direita
+     right = 2;     
+     I = [n:n:m*n];
+     gright = sparse(n*m,1);
+
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     
+     du = u_x(x_i, y_i);     
+     gright(I) = -du*kappa;
+     
+     # fluxo prescrito para baixo
+     bottom = 2;
+     I = [2:1:n-1];
+     gbottom = sparse(n*m, 1);
+     
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     
+     du = u_y(x_i, y_i);
+     gbottom(I) = du./kappa;
+
+     # fluxo prescrito para cima
+     top = 2;
+     I = [(m-1)*n+2:1:m*n-1];
+     gtop = sparse(n*m, 1);
+     
+     x_i = x(x_index(I));
+     y_i = y(y_index(I));
+     
+     du = u_y(x_i, y_i);
+     gbottom(I) = -du./kappa; 
 
  endswitch 
 endfunction

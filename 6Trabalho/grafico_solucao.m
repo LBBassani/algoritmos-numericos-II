@@ -11,6 +11,9 @@
   [xx,yy]= meshgrid (x,y);
   surf(xx,yy,z);
  
+  xlabel("x")
+  ylabel("y")
+  zlabel("u(x,y)")
 endfunction
 
 
