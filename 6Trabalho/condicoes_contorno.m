@@ -2,25 +2,25 @@
 function [A,f] = condicoes_contorno (A,f,n,m,left,gleft,right,gright,bottom,gbottom,top,gtop,a,b,c,d,e,hx,hy,kappa)
   
 %
-%  Contorno  "left" nos nï¿½s I = 1,n+1,...,(m-1)*n+1 : 
-% = 1 entï¿½o "gleft" ï¿½ o valor prescrito "g" ;
-% = 2 entï¿½o "gleft" ï¿½ o valor do fluxo "sigma";
-% = 3 entï¿½o "gleft" serï¿½ um vetor ["alfa", "beta","gama"], onde gleft(1,1)=alfa; gleft(1,2)=beta; gleft(1,3)=gama;
+%  Contorno  "left" nos nós I = 1,n+1,...,(m-1)*n+1 : 
+% = 1 então "gleft" é o valor prescrito "g" ;
+% = 2 então "gleft" é o valor do fluxo "sigma";
+% = 3 então "gleft" será um vetor ["alfa", "beta","gama"], onde gleft(1,1)=alfa; gleft(1,2)=beta; gleft(1,3)=gama;
 %
-%  Contorno  "right" nos nï¿½s I = n,2*n,...,(m-1)*n, m*n:
-% = 1 entï¿½o "gright" ï¿½ o valor prescrito ;
-% = 2 entï¿½o "gright" ï¿½ o valor do fluxo sigma;
-% = 3 entï¿½o "gright" serï¿½ um vetor ["alfa", "beta","gama"], onde gright(1,1)=alfa; gright(1,2)=beta; gright(1,3)=gama;  
+%  Contorno  "right" nos nós I = n,2*n,...,(m-1)*n, m*n:
+% = 1 então "gright" é o valor prescrito ;
+% = 2 então "gright" é o valor do fluxo sigma;
+% = 3 então "gright" será um vetor ["alfa", "beta","gama"], onde gright(1,1)=alfa; gright(1,2)=beta; gright(1,3)=gama;  
 %
-%  Contorno  "bottom" nos nï¿½s I = 2,3,...,(n-1):
-% = 1 entï¿½o "gbottom" ï¿½ o valor prescrito ;
-% = 2 entï¿½o "gbottom" ï¿½ o valor do fluxo sigma;
-% = 3 entï¿½o "gbottom" serï¿½ um vetor ["alfa", "beta","gama"], onde gbotton(1,1)=alfa; gbotton(1,2)=beta; gbottom(1,3)=gama;  
+%  Contorno  "bottom" nos nós I = 2,3,...,(n-1):
+% = 1 então "gbottom" é o valor prescrito ;
+% = 2 então "gbottom" é o valor do fluxo sigma;
+% = 3 então "gbottom" será um vetor ["alfa", "beta","gama"], onde gbottom(1,1)=alfa; gbottom(1,2)=beta; gbottom(1,3)=gama;  
 %
-%  Contorno  "top" nos nï¿½s I = (m-1)*n+2,...,m*n-1:
-% = 1 entï¿½o "gtop" ï¿½ o valor prescrito ;
-% = 2 entï¿½o "gtop" ï¿½ o valor do fluxo sigma;
-% = 3 entï¿½o "gtop" serï¿½ um vetor ["alfa", "beta","gama"], onde gtop(1,1)=alfa; gtop(1,2)=beta; gtop(1,3)=gama;
+%  Contorno  "top" nos nós I = (m-1)*n+2,...,m*n-1:
+% = 1 então "gtop" é o valor prescrito ;
+% = 2 então "gtop" é o valor do fluxo sigma;
+% = 3 então "gtop" será um vetor ["alfa", "beta","gama"], onde gtop(1,1)=alfa; gtop(1,2)=beta; gtop(1,3)=gama;
 %
 
 N = n*m;
@@ -42,12 +42,21 @@ switch left
        I(1) = [];
        a_index = sub2ind([N N], I, I-1);
        A(a_index) = b(I) = 0;
-       
-       A;
-       f;
           
   case 3
-         ...;
+       a_index = sub2ind([N N], I, I);
+       alpha_index = sub2ind([N N], I, ones(1, length(I)));
+       beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+       gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+       
+       A(a_index) = a(I) = a(I) + b(I).*( 1 - hx * gleft(beta_index) ./ gleft(alpha_index) );
+       
+       f(I) = f(I) - hx*( b(I).*(gleft( gamma_index) ./ gleft(alpha_index) ) );
+       
+       I(1) = [];
+       a_index = sub2ind([N N], I, I-1);
+       A(a_index) = b(I) = 0;
+       
   otherwise
          printf("Erro na Condicao de contorno"); 
   end
@@ -58,56 +67,81 @@ switch right
 case 1 
      [A, f] = valor_prescrito(A, f, gright, I);
 case 2
-     for i = I  
-       if i < N
-          A(i,i+1) = 0; 
-       endif
+     
+     a_index = sub2ind([N N], I, I);
+     A(a_index) = a(I) = a(I) + c(I);
+       
+     f(I) = f(I) + (hx/kappa)*(c(I).*gright(I));
+     
+     I(length(I)) = [];
+     a_index = sub2ind([N N], I, I + 1);
+     A(a_index) = c(I) = 0;
          
-         A(i,i) = a(i) + c(i);
-         f(i) = f(i) + c(i)*(hx/kappa)*gright(i); 
-     endfor    
 case 3
-      ...;
+     a_index = sub2ind([N N], I, I);
+     alpha_index = sub2ind([N N], I, ones(1, length(I)));
+     beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+     gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+     
+     A(a_index) = a(I) = a(I) + c(I).*( 1 - hx * gright(beta_index) ./ gright(alpha_index) );
+     f(I) = f(I) - hx*( c(I).*(gright( gamma_index) ./ gright(alpha_index) ) );
+       
+     I(length(I)) = [];
+     a_index = sub2ind([N N], I, I-1);
+     A(a_index) = b(I) = 0;
 otherwise
        printf("Erro na Condicao de contorno"); 
 end
 
  % Condicoes de contorno bottom
-I = [1:1:n];
+I = [2:1:n-1];
 switch bottom
 case 1
      [A, f] = valor_prescrito(A, f, gbottom, I); 
 case 2
-     for i = I  
-       if i >= n + 1
-          A(i,i-n) = 0;
-       endif
-         
-         A(i,i) = a(i) + d(i);
-         f(i) = f(i) + d(i)*(hy/kappa)*gbottom(i); 
-     endfor
+     
+     a_index = sub2ind([N N], I, I);
+     A(a_index) = a(I) = a(I) + d(I);
+     
+     f(I) = f(I) + (hy/kappa)*(d(I).*gbottom(I));
+     
 case 3
-     ...;
+     a_index = sub2ind([N N], I, I);
+     alpha_index = sub2ind([N N], I, ones(1, length(I)));
+     beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+     gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+     
+     A(a_index) = a(I) = a(I) + d(I).*( 1 - hy * gbottom(beta_index) ./ gbottom(alpha_index) );
+     f(I) = f(I) - hy*( d(I).*(gbottom( gamma_index) ./ gbottom(alpha_index) ) );
+
 otherwise
        printf("Erro na Condicao de contorno"); 
 end
 
  % Condicoes de contorno top
 I = [(m-1)*n+2:1:m*n-1];
+I(1) = [];
+I(length(I)) = [];
 switch top
 case 1 
      [A, f] = valor_prescrito(A, f, gtop, I);
 case 2
-     for i = I  
-       if i <= N - n
-          A(i,i+n) = 0;
-       endif
-         
-         A(i,i) = a(i) + e(i);
-         f(i) = f(i) + e(i)*(hy/kappa)*gtop(i); 
-     endfor
+     
+     a_index = sub2ind([N N], I, I);
+     A(a_index) = a(I) = a(I) + e(I);
+     
+     f(I) = f(I) + (hy/kappa)*(e(I).*gtop(I));
+     
 case 3
-     ...;
+     
+     a_index = sub2ind([N N], I, I);
+     alpha_index = sub2ind([N N], I, ones(1, length(I)));
+     beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+     gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+     
+     A(a_index) = a(I) = a(I) + e(I).*( 1 - hy * gtop(beta_index) ./ gtop(alpha_index) );
+     f(I) = f(I) - hy*( e(I).*(gtop( gamma_index) ./ gtop(alpha_index) ) );
+     
 otherwise
        printf("Erro na Condicao de contorno"); 
 end
@@ -115,6 +149,7 @@ end
 endfunction
 
 function [A,f] = valor_prescrito (A, f, v, I)
+    
     N = rows(A);
     a_index = sub2ind([N N], I, I);
     A(I, :) = 0; 
