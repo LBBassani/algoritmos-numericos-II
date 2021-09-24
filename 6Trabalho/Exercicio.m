@@ -1,12 +1,114 @@
 function Exercicio()
-   n = m = 50;
-   a = c = 1;
-   b = d = 0;
-   [u,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) analise_assintotica(x,y,n,m,1));
-   
-   figure()
-   grafico_solucao(u,x,y,n,m)
-   hgsave ("Figuras/teste.ofig")
+   I = [1,2,3];
+   N = [100];
+   for i = I
+     for n_m = N
+       
+         % Análise assintotica com n = m
+         a = c = 0;
+         b = d = 1;
+         [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n_m,n_m, @(x,y,n,m) analise_assintotica(x,y,n,m,i));
+         
+         figure()
+         grafico_solucao(u,x,y,n_m,n_m)
+         hgsave (strjoin({"Figuras/Direto/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
+         close()
+         save(strjoin({"Resultados/Direto/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec");
+         
+      endfor
+     endfor
+     
+     L = W = 1;
+     
+     for i = I
+       for n_m = N
+         
+         a = c = 0;
+         b = L;
+         d = W;
+         
+         [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n_m,n_m, @(x,y,n,m) resfriador_bidimensional(x,y,n,m,i));
+       
+         figure()
+         grafico_solucao(u,x,y,n_m,n_m)
+         hgsave (strjoin({"Figuras/Direto/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
+         close()
+         save(strjoin({"Resultados/Direto/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec");
+         
+       endfor
+     endfor
+     
+endfunction
+
+function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = resfriador_bidimensional(x,y,n,m,ver)
+    
+    N = n*m;
+    T = 2;
+    kappa = 1.0;
+    c = 1;
+    u_ref = 70;
+    
+    I = [1:1:N];
+    bx = sparse(N, 1);
+    by = sparse(N, 1);
+    gamma = sparse(N, 1);
+    fun = sparse(N, 1);
+    
+    gamma(I) = 2*c/T;
+    fun(I) = 2*c*u_ref/T;
+    
+    switch ver
+       case 1
+           
+         left = 1;
+         gleft = 200.0;
+
+         right = 1;
+         gright = 70.0;
+
+         bottom = 1; 
+         gbottom = 70.0;
+
+         top = 1;
+         gtop = 70.0;
+       case 2
+         
+         left = 1;
+         gleft = 200;
+         
+         right = 1;
+         gright = 70;
+
+         bottom = 2; 
+         gbottom = sparse(n*m, 1);
+
+         top = 2;
+         gtop = sparse(n*m, 1);
+         
+       case 3
+           
+         left = 3;
+         I = [1:n:(m-1)*n+1];
+         gleft = sparse(n*m, 3);
+         
+         alpha_index = sub2ind([N N], I, ones(1, length(I)));
+         beta_index = sub2ind([N N], I, ones(1, length(I))*2);
+         gamma_index = sub2ind([N N], I, ones(1, length(I))*3);
+         
+         gleft(alpha_index) = kappa;
+         gleft(beta_index) = c;
+         gleft(gamma_index) = c*u_ref;
+
+         right = 1;
+         gright = 70.0;
+
+         bottom = 1; 
+         gbottom = 70.0;
+
+         top = 1;
+         gtop = 70.0;
+     endswitch
+    
 endfunction
 
 function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = analise_assintotica(x,y,n,m,ver)

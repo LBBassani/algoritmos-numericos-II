@@ -94,7 +94,17 @@ otherwise
 end
 
  % Condicoes de contorno bottom
-I = [2:1:n-1];
+I = [1:1:n];
+
+% Garantindo valor prescrito nas quinas do dominio
+if left == 1
+  I(1) = [];
+endif
+
+if right == 1
+  I(length(I)) = [];
+endif
+
 switch bottom
 case 1
      [A, f] = valor_prescrito(A, f, gbottom, I); 
@@ -119,9 +129,17 @@ otherwise
 end
 
  % Condicoes de contorno top
-I = [(m-1)*n+2:1:m*n-1];
-I(1) = [];
-I(length(I)) = [];
+I = [(m-1)*n+1:1:m*n];
+
+% Garantindo valor prescrito nas quinas do dominio
+if left == 1
+  I(1) = [];
+endif
+
+if right == 1
+  I(length(I)) = [];
+endif
+
 switch top
 case 1 
      [A, f] = valor_prescrito(A, f, gtop, I);
