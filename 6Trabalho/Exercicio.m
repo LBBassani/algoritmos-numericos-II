@@ -1,7 +1,7 @@
 function Exercicio()
    diretorio = "GMRES"
    I = [1,2,3];
-   N = [20];
+   N = [20,50,100,200];
    for i = I
      for n_m = N
        
