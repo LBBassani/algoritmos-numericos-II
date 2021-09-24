@@ -39,19 +39,23 @@ function Exercicio()
        endfor
      endfor
      
-     n = 101;
-     m = 101;
+     N = [51,101,201];
+     M = [21,101,201];
      
-     a = c = 0;
-     b = 5000;
-     d = 1000;
-     
-     [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) escoamento_subterraneo(x,y,n,m));
-     figure()
-     grafico_solucao(u,x,y,n,m)
-     hgsave (strjoin({"Figuras/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".ofig"}, ""))
-     close()
-     save(strjoin({"Resultados/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".mat"}, ""), "u","flag","relres","iter","resvec");
+     for i = 1:length(N)
+         n = N(i);
+         m = M(i);
+         a = c = 0;
+         b = 5000;
+         d = 1000;
+         
+         [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) escoamento_subterraneo(x,y,n,m));
+         figure()
+         grafico_solucao(u,x,y,n,m)
+         hgsave (strjoin({"Figuras/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".ofig"}, ""))
+         close()
+         save(strjoin({"Resultados/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".mat"}, ""), "u","flag","relres","iter","resvec");
+     endfor
      
 endfunction
 
