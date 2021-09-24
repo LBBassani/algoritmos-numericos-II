@@ -1,6 +1,7 @@
 function Exercicio()
+   diretorio = "GMRES"
    I = [1,2,3];
-   N = [100];
+   N = [20,50,100,200];
    for i = I
      for n_m = N
        
@@ -11,9 +12,9 @@ function Exercicio()
          
          figure()
          grafico_solucao(u,x,y,n_m,n_m)
-         hgsave (strjoin({"Figuras/Direto/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
+         hgsave (strjoin({"Figuras/"; diretorio; "/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
          close()
-         save(strjoin({"Resultados/Direto/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec");
+         save(strjoin({"Resultados/"; diretorio;"/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec");
          
       endfor
      endfor
@@ -31,13 +32,74 @@ function Exercicio()
        
          figure()
          grafico_solucao(u,x,y,n_m,n_m)
-         hgsave (strjoin({"Figuras/Direto/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
+         hgsave (strjoin({"Figuras/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
          close()
-         save(strjoin({"Resultados/Direto/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec");
+         save(strjoin({"Resultados/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec");
          
        endfor
      endfor
      
+     n = 101;
+     m = 101;
+     
+     a = c = 0;
+     b = 5000;
+     d = 1000;
+     
+     [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) escoamento_subterraneo(x,y,n,m));
+     figure()
+     grafico_solucao(u,x,y,n,m)
+     hgsave (strjoin({"Figuras/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".ofig"}, ""))
+     close()
+     save(strjoin({"Resultados/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".mat"}, ""), "u","flag","relres","iter","resvec");
+     
+endfunction
+
+function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = escoamento_subterraneo(x,y,n,m)
+    
+    N = n*m;
+    R_w = -250;
+    kappa = 1;
+    P_ref = 100;
+    
+    bx = sparse(N, 1);
+    by = sparse(N, 1);
+    gamma = sparse(N, 1);
+    fun = sparse(N, 1);
+    
+    a = c = 0;
+    b = 5000;
+    d = 1000;
+    
+    hx = (b-a)/(n-1);
+    hy = (d-c)/(m-1);
+    
+    x1 = 1500;
+    y1 = 600;
+    x2 = 3200;
+    y2 = 250;
+    
+    i1 = (hx + x1 - a)/hx;
+    j1 = (hy + y1 - c)/hy;
+    i2 = (hx + x2 - a)/hx;
+    j2 = (hy + y2 - c)/hy;
+    
+    index = @(i,j) (j - 1) * n + i;
+    fun(index(i1,j1)) = R_w;
+    fun(index(i2,j2)) = R_w;
+    
+    left = 1;
+    gleft = P_ref;
+    
+    right = 1;
+    gright = P_ref;
+    
+    top = 2;
+    gtop = sparse(N, 1);
+    
+    bottom = 2;
+    gbottom = sparse(N, 1);
+    
 endfunction
 
 function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = resfriador_bidimensional(x,y,n,m,ver)

@@ -12,7 +12,7 @@
   surf(xx,yy,z);
   xlabel("x")
   ylabel("y")
-  zlabel("u(x,y)")
+  zlabel("u(x,y)\n\n")
 endfunction
 
 
