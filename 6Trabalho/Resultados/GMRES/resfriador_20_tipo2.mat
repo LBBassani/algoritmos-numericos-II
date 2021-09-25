@@ -1,4 +1,4 @@
-# Created by Octave 6.3.0, Fri Sep 24 18:45:36 2021 GMT <unknown@Rogerio-HP>
+# Created by Octave 6.3.0, Sat Sep 25 13:04:37 2021 GMT <unknown@Rogerio-HP>
 # name: u
 # type: matrix
 # rows: 400
@@ -610,5 +610,17 @@
 # name: m
 # type: scalar
 20
+
+
+# name: tempo
+# type: scalar
+0.15700101852416992
+
+
+# name: diretorio
+# type: sq_string
+# elements: 1
+# length: 5
+GMRES
 
 

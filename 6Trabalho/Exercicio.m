@@ -1,63 +1,73 @@
 function Exercicio()
-   diretorio = "GMRES"
-   I = [1,2,3];
-   N = [20,50,100,200];
-   for i = I
-     for n_m = N
-       
-         % Análise assintotica com n = m
-         n = m = n_m;
-         a = c = 0;
-         b = d = 1;
-         [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) analise_assintotica(x,y,n,m,i));
+   diretorios = ["GMRES"; "Direto"];
+   direto = [false, true];
+   for q = 1:length(direto)
+       diretorio = strrep(diretorios(q, :), " ", "")
+       I = [1,2,3];
+       N = [20,50,100,200];
+       for i = I
+           for n_m = N
+             
+               % Análise assintotica com n = m
+               n = m = n_m;
+               a = c = 0;
+               b = d = 1;
+               tic
+               [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) analise_assintotica(x,y,n,m,i), direto(q));
+               tempo = toc();
+               
+               figure()
+               grafico_solucao(u,x,y,n,m)
+               hgsave (strjoin({"Figuras/"; diretorio; "/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
+               close()
+               save(strjoin({"Resultados/"; diretorio;"/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec","x","y","n","m","tempo","diretorio");
+               
+            endfor
+         endfor
          
-         figure()
-         grafico_solucao(u,x,y,n,m)
-         hgsave (strjoin({"Figuras/"; diretorio; "/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
-         close()
-         save(strjoin({"Resultados/"; diretorio;"/assintotica_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec","x","y","n","m");
+         L = W = 1;
          
-      endfor
-     endfor
-     
-     L = W = 1;
-     
-     for i = I
-       for n_m = N
-         n = m = n_m;
-         a = c = 0;
-         b = L;
-         d = W;
+         for i = I
+             for n_m = N
+               n = m = n_m;
+               a = c = 0;
+               b = L;
+               d = W;
+               
+               tic
+               [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) resfriador_bidimensional(x,y,n,m,i), direto(q));
+               tempo = toc();
+             
+               figure()
+               grafico_solucao(u,x,y,n,m)
+               hgsave (strjoin({"Figuras/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
+               close()
+               save(strjoin({"Resultados/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec","x","y","n","m","tempo","diretorio");
+               
+             endfor
+         endfor
          
-         [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) resfriador_bidimensional(x,y,n,m,i));
-       
-         figure()
-         grafico_solucao(u,x,y,n,m)
-         hgsave (strjoin({"Figuras/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
-         close()
-         save(strjoin({"Resultados/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec","x","y","n","m");
+         N = [51,101,201];
+         M = [21,101,201];
          
-       endfor
-     endfor
-     
-     N = [51,101,201];
-     M = [21,101,201];
-     
-     for i = 1:length(N)
-         n = N(i);
-         m = M(i);
-         a = c = 0;
-         b = 5000;
-         d = 1000;
-         
-         [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) escoamento_subterraneo(x,y,n,m));
-         figure()
-         grafico_solucao(u,x,y,n,m)
-         hgsave (strjoin({"Figuras/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".ofig"}, ""))
-         close()
-         save(strjoin({"Resultados/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".mat"}, ""), "u","flag","relres","iter","resvec","x","y","n","m");
-     endfor
-     
+         for i = 1:length(N)
+             n = N(i);
+             m = M(i);
+             a = c = 0;
+             b = 5000;
+             d = 1000;
+             
+             tic
+             [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) escoamento_subterraneo(x,y,n,m), direto(q));
+             tempo = toc();
+             
+             figure()
+             grafico_solucao(u,x,y,n,m)
+             hgsave (strjoin({"Figuras/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".ofig"}, ""))
+             close()
+             save(strjoin({"Resultados/"; diretorio;"/escoamento_"; int2str(n); "x"; int2str(m); ".mat"}, ""), "u","flag","relres","iter","resvec","x","y","n","m","tempo","diretorio");
+         endfor
+      endfor   
 endfunction
 
 function [bx,by,gamma,fun,kappa,left,gleft,right,gright,bottom,gbottom,top,gtop] = escoamento_subterraneo(x,y,n,m)
