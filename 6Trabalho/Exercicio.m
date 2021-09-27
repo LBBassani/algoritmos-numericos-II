@@ -1,36 +1,11 @@
 function Exercicio()
   
-   diretorio = "GMRES"
-   
-   I = [2,3];
-   N = [20,50,100];
-   for i = I
-     for n_m = N
-       n = m = n_m;
-       a = c = 0;
-       b = L;
-       d = W;
-       
-       tic
-       [u,flag,relres,iter,resvec,x,y] = pvc2d(a,b,c,d,n,m, @(x,y,n,m) resfriador_bidimensional(x,y,n,m,i), direto(q));
-       tempo = toc();
-     
-       figure()
-       grafico_solucao(u,x,y,n,m)
-       hgsave (strjoin({"Figuras/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".ofig"}, ""))
-       close()
-       save(strjoin({"Resultados/"; diretorio;"/resfriador_"; int2str(n_m); "_tipo"; int2str(i); ".mat"}, ""), "u","flag","relres","iter","resvec","x","y","n","m","tempo","diretorio"); 
-
-     endfor
-   endfor
-   
-  
-   diretorios = ["Direto"];
-   direto = [true];
+   diretorios = ["GMRES";"Direto"];
+   direto = [false, true];
    for q = 1:length(direto)
        diretorio = strrep(diretorios(q, :), " ", "")
        I = [1,2,3];
-       N = [20,50,100,200];
+       N = [200];
        for i = I
            for n_m = N
              
@@ -75,6 +50,7 @@ function Exercicio()
          endfor
          
          N = [51,101,201];
+         N = [];
          M = [21,101,201];
          
          for i = 1:length(N)
