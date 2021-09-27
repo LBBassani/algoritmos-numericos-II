@@ -1,0 +1,80 @@
+# Created by Octave 6.3.0, Mon Sep 27 14:53:31 2021 GMT <unknown@LAPTOP-7NASCU26>
+# name: u
+# type: matrix
+# rows: 16
+# columns: 1
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+
+
+# name: flag
+# type: scalar
+1
+
+
+# name: relres
+# type: scalar
+NaN
+
+
+# name: iter
+# type: range
+# base, length, increment
+0 2 0
+
+
+# name: resvec
+# type: scalar
+NaN
+
+
+# name: x
+# type: matrix
+# rows: 1
+# columns: 4
+ 0 0.33333333333333331 0.66666666666666674 1
+
+
+# name: y
+# type: matrix
+# rows: 1
+# columns: 4
+ 0 0.33333333333333331 0.66666666666666674 1
+
+
+# name: n
+# type: scalar
+4
+
+
+# name: m
+# type: scalar
+4
+
+
+# name: tempo
+# type: scalar
+0.012379884719848633
+
+
+# name: diretorio
+# type: sq_string
+# elements: 1
+# length: 5
+GMRES
+
+

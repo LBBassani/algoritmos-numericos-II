@@ -1,0 +1,6 @@
+Número de linhas da matriz: 400
+Discretização: 20
+Tempo de espera: 0.44546 segundos
+Flag de convergência: 3 [erro estagnado em 0.94703 depois de 2437 iterações]
+Número de iterações: 2437
+Valor final do resíduo relativo: 9.470251e-01

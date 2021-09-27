@@ -1,0 +1,8 @@
+Número de linhas da matriz: 2500
+Tempo de espera: 0.620678 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 1
+Valor final do resíduo relativo: 0.000000e+00
+Norma do máximo da solução: 1.063116e+00
+Norma do erro: 5.315579e+01
+rro: 5.315579e+01

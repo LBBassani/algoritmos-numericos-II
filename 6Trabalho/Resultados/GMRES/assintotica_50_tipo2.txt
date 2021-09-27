@@ -1,0 +1,8 @@
+Número de linhas da matriz: 2500
+Tempo de espera: 16.6895 segundos
+Flag de convergência: 3 [erro estagnado em 1.958e-08 depois de 19978 iterações]
+Número de iterações: 19978
+Valor final do resíduo relativo: 1.957993e-08
+Norma do máximo da solução: 1.063115e+00
+Norma do erro: 5.315575e+01
+rro: 5.315575e+01

@@ -1,0 +1,6 @@
+Número de linhas da matriz: 2500
+Discretização: 50
+Tempo de espera: 196.76 segundos
+Flag de convergência: 1 [número maximo de iterações atingido]
+Número de iterações: 400001
+Valor final do resíduo relativo: 9.638280e-01

@@ -1,0 +1,7 @@
+Número de linhas da matriz: 2601
+Discretização: 51
+Tempo de espera: 4.98348 segundos
+Flag de convergência: 0 [convergencia atingida]
+Número de iterações: 11581
+Valor final do resíduo relativo: 9.991741e-09
+Norma do máximo da solução: 2.547210e+06

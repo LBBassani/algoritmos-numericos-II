@@ -1,11 +1,11 @@
 function Exercicio()
   
-   diretorios = ["GMRES";"Direto"];
+   diretorios = ["GMRES"; "Direto"];
    direto = [false, true];
    for q = 1:length(direto)
        diretorio = strrep(diretorios(q, :), " ", "")
        I = [1,2,3];
-       N = [200];
+       N = [20,50,100,200];
        for i = I
            for n_m = N
              
@@ -28,7 +28,6 @@ function Exercicio()
          
          L = W = 1;
          
-         N(length(N)) = [];
          for i = I
              for n_m = N
                n = m = n_m;

@@ -1,0 +1,87 @@
+# Created by Octave 6.3.0, Mon Sep 27 14:53:11 2021 GMT <unknown@LAPTOP-7NASCU26>
+# name: u
+# type: matrix
+# rows: 16
+# columns: 1
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0.48592157700662403
+ 0.51687028359089227
+ 0
+ 0
+ 0.4640568733728912
+ 0.45767190517496192
+ 0
+ 0
+ 0
+ 0
+ 0
+
+
+# name: flag
+# type: scalar
+0
+
+
+# name: relres
+# type: scalar
+8.342476473280178e-16
+
+
+# name: iter
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 4
+
+
+# name: resvec
+# type: matrix
+# rows: 5
+# columns: 1
+ 20.749619575335323
+ 14.048523419189069
+ 1.7649266763376834
+ 0.18940983520859017
+ 1.7310321313674878e-14
+
+
+# name: x
+# type: matrix
+# rows: 1
+# columns: 4
+ 0 0.33333333333333331 0.66666666666666674 1
+
+
+# name: y
+# type: matrix
+# rows: 1
+# columns: 4
+ 0 0.33333333333333331 0.66666666666666674 1
+
+
+# name: n
+# type: scalar
+4
+
+
+# name: m
+# type: scalar
+4
+
+
+# name: tempo
+# type: scalar
+0.016820192337036133
+
+
+# name: diretorio
+# type: sq_string
+# elements: 1
+# length: 5
+GMRES
+
+
